@@ -1,14 +1,28 @@
 import styles from "./Login.module.scss";
 import classNames from "classnames";
-import { Button, Paper, TextField } from "@mui/material";
+import { Button, InputAdornment, Paper, TextField } from "@mui/material";
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
 
 export default function Login() {
     return (
         <div className={classNames(styles['login-form'])}>
             <Paper className={classNames(styles.paper)}>
-                <TextField sx={{ margin: "15px 15px 7.5px 15px" }} variant="outlined" />
-                <TextField sx={{ margin: "7.5px 15px" }} variant="outlined" />
-                <Button variant="contained" sx={{ margin: "7.5px 15px 15px 15px" }} > Login</Button>
+                <TextField InputProps={{
+                    startAdornment: (
+                        <InputAdornment position="start">
+                            <EmailIcon />
+                        </InputAdornment>
+                    )
+                }} variant="outlined" />
+                <TextField InputProps={{
+                    startAdornment: (
+                        <InputAdornment position="start">
+                            <LockIcon />
+                        </InputAdornment>
+                    )
+                }} variant="outlined" />
+                <Button variant="contained" > Login</Button>
             </Paper>
         </div>
     )

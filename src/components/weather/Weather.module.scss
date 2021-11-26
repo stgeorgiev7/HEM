@@ -1,0 +1,29 @@
+.weather-wrapper {
+    width: 100%;
+    display: flex;
+};
+
+.weather-icon {
+    height: 80px;
+    padding: 0 10px 0;
+};
+
+.weather {
+    color: #7441F3;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    align-self: flex-start;
+};
+
+.degrees {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 70px;
+};
+
+
+
+
+

@@ -1,12 +1,17 @@
 .header-wrapper {
     width: 100%;
-    display: flex;
 }
 
-.header-paper {
-    width: 100%;
-}
 
 .hello {
     color: #7441F3;
+}
+
+.right {
+    display:flex;
+}
+
+.left {
+    display: flex;
+    flex-wrap: wrap;
 }

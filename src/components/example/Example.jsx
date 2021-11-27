@@ -11,12 +11,7 @@ import { Grid } from "@mui/material";
 
 export default function Copyright() {
 
-  const headerComponents = [<Weather degrees={15} type="snowy" />, <Time />].map((child, index) => {
-    return(
-      <Grid item xs={3} key={index}>
-          {child}
-      </Grid>
-  )})
+  const headerComponents = [<Weather degrees={15} type="stormy" />, <Time />];
 
   return (
     <div className={classNames(styles.wrapper)}>

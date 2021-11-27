@@ -3,17 +3,29 @@ import Container from "@mui/material/Container";
 import Link from "../link/Link";
 import styles from "./Example.module.scss";
 import classNames from "classnames";
+import Header from "../header/Header";
+import User from "../user/User"
 import Weather from "../weather/Weather";
-import User from "../user/User";
+import Time from "../time/Time";
+import { Grid } from "@mui/material";
 
 export default function Copyright() {
+
+  const headerComponents = [<Weather degrees={15} type="snowy" />, <Time />].map((child, index) => {
+    return(
+      <Grid item xs={3} key={index}>
+          {child}
+      </Grid>
+  )})
+
   return (
     <div className={classNames(styles.wrapper)}>
-      <Container className={classNames(styles.container)} maxWidth="xl">
-        <Paper className={classNames(styles.paper)}>
-            <Weather type={"rainy"} degrees={22}/>
-        </Paper>
-      </Container>
+      
+          <Header
+            left={<User avatar={"/images/avatar.png"} name={"John Doe"} size={80} />}
+            right={headerComponents}
+          />
+       
     </div>
   );
 }

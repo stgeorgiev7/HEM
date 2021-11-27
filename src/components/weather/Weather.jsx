@@ -7,6 +7,7 @@ export default function Weather({ degrees, type }) {
     const icons = {
         cloudy: "/images/cloudy.svg",
         rainy: "/images/rainy.svg",
+        stormy: "/images/stormy.svg",
         snowy: "/images/snowy.svg",
         sunny: "/images/sunny.svg"
     };

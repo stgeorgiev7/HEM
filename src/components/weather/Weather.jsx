@@ -16,8 +16,7 @@ export default function Weather({ degrees, type }) {
             <img src={icons[type]} className={classNames(styles["weather-icon"])}></img>
             <Stack>
                 <Typography className={classNames(styles["weather"])}>Weather</Typography>
-                <Typography sx={{ fontSize: "60px", fontWeight: 900, lineHeight:"70px" }}>{degrees} {'\u00b0'}</Typography>
-
+                <Typography sx={{ fontSize: "60px", fontWeight: 900, lineHeight:"70px" }}>{degrees}&deg;</Typography>
             </Stack>
 
         </div>);

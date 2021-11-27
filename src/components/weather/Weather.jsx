@@ -19,7 +19,6 @@ export default function Weather({ degrees, type }) {
                 <Typography className={classNames(styles["weather"])}>Weather</Typography>
                 <Typography sx={{ fontSize: "60px", fontWeight: 900, lineHeight:"70px" }}>{degrees}&deg;</Typography>
             </Stack>
-
         </div>);
 
 }

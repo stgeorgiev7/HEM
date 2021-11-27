@@ -1,0 +1,15 @@
+.time-wrapper{
+    width: 100%;
+}
+
+.time-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-text{
+    position: relative;
+    right:10px;
+    color: #7441F3;
+}

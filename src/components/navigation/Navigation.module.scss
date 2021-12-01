@@ -1,0 +1,48 @@
+.user{
+    display: flex !important;
+    align-items: center;
+    padding: 30px 18px;
+}
+
+.list-item{
+    padding-left: 20px !important;
+}
+
+.building-list-item {
+    height: 69px;
+    background-color: #7441F312 !important;
+}
+
+.badge{
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 7px;
+}
+
+.building-badge{
+    background-color: #E150A6;
+    color: white;
+}
+
+.room-badge{
+    background-color: #EB675C;
+    color: white;
+}
+
+.menu-ul {
+    ul{
+        padding: 0;
+    }
+}
+
+.menu-item{
+    width: 140px;
+    padding: 14px 20px;
+}
+
+.drawer{
+    div{
+        border-right: 0px;
+    }
+}

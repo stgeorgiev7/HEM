@@ -8,23 +8,13 @@ import User from "../user/User"
 import Weather from "../weather/Weather";
 import Time from "../time/Time";
 import Thermostat from "../thermostat/Thermostat";
+import Card from "../card/Card";
 
 export default function Copyright() {
 
   return (
     <div className={classNames(styles.wrapper)}>
-      
-          <Thermostat data={
-            [
-              { temperature: 25, hour: 12 },
-              { temperature: 13, hour: 13 },
-              { temperature: 14, hour: 14 },
-              { temperature: 15, hour: 15 },
-              { temperature: 15, hour: 16 },
-              { temperature: 10, hour: 17 },
-            ]
-          }/>
-       
+        <Card iconUrl="/images/alarm-clock.svg"/>
     </div>
   );
 }

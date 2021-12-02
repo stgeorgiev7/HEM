@@ -1,11 +1,11 @@
 import { useState } from "react";
-import styles from "./Termostat.module.scss";
+import styles from "./Thermostat.module.scss";
 import classNames from "classnames";
 import { CircularProgress, Typography, Button } from "@mui/material";
 import { AddCircleOutlined, RemoveCircleOutlined } from "@mui/icons-material";
 import { ComposedChart, Line } from "recharts";
 
-export default function Termostat({ data }) {
+export default function Thermostat({ data }) {
 
     const [temperature, setTemperature] = useState(25);
 

@@ -7,19 +7,23 @@ import Header from "../header/Header";
 import User from "../user/User"
 import Weather from "../weather/Weather";
 import Time from "../time/Time";
-import { Grid } from "@mui/material";
+import Termostat from "../termostat/Termostat"; 
 
 export default function Copyright() {
-
-  const headerComponents = [<Weather degrees={15} type="stormy" />, <Time />];
 
   return (
     <div className={classNames(styles.wrapper)}>
       
-          <Header
-            left={<User avatar={"/images/avatar.png"} name={"John Doe"} size={80} />}
-            right={headerComponents}
-          />
+          <Termostat data={
+            [
+              { temperature: 25, hour: 12 },
+              { temperature: 13, hour: 13 },
+              { temperature: 14, hour: 14 },
+              { temperature: 15, hour: 15 },
+              { temperature: 15, hour: 16 },
+              { temperature: 10, hour: 17 },
+            ]
+          }/>
        
     </div>
   );

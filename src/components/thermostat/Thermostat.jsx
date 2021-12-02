@@ -2,7 +2,8 @@ import { useState } from "react";
 import styles from "./Thermostat.module.scss";
 import classNames from "classnames";
 import { CircularProgress, Typography, Button } from "@mui/material";
-import { AddCircleOutlined, RemoveCircleOutlined } from "@mui/icons-material";
+import { AddCircleOutlined as AddCircleOutlinedIcon } from "@mui/icons-material";
+import { RemoveCircleOutlined } from "@mui/icons-material";
 import { ComposedChart, Line } from "recharts";
 
 export default function Thermostat({ data }) {
@@ -53,7 +54,7 @@ export default function Thermostat({ data }) {
                     variant="text"
                     onClick={increaseTemperature}
                     className={classNames(styles["plusBtn"])} >
-                    <AddCircleOutlined size="large" />
+                    <AddCircleOutlinedIcon size="large" />
                 </Button>
 
 

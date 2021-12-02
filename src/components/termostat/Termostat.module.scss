@@ -1,0 +1,61 @@
+.termostat-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    
+}
+
+.circular {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(23deg, rgba(223,83,168,1) 0%, rgba(236,105,83,1) 100%);
+    border-radius: 15px;
+    padding-top: 20px;
+}
+
+.left-circle{
+    transform: rotate(180deg) !important;
+    color: #ffff !important;
+    margin: 0;
+    position: relative;
+    left: 115px;
+}
+
+.right-circle  {
+    transform: rotate(180deg) !important;
+    color: rgba(#ffff, 20%) !important;
+    margin: 0;
+    position: relative;
+    right: 115px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 185px;
+    align-items: center;
+    color: white;  
+    font-size: 30px !important;
+    
+}
+
+.plusBtn, .minusBtn {
+    padding: 0 !important;
+    color: white !important;
+    transform: scale(1.2);
+}
+
+.temperature {
+    font-size: 40px !important;
+}
+
+.linear-graphic {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 180px;
+    background: linear-gradient(23deg, rgba(223,83,168,1) 0%, rgba(236,105,83,1) 100%);
+
+}

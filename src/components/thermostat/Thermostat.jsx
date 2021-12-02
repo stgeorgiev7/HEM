@@ -41,21 +41,24 @@ export default function Thermostat({ data }) {
             </div>
 
             <div className={classNames(styles["controls"])}>
-                <Button
+                {/* <Button
                     variant="text"
                     onClick={decreaseTemperature}
                     className={classNames(styles["minusBtn"])}>
                     <RemoveCircleOutlined />
-                </Button>
+                </Button> */}
 
+
+                <RemoveCircleOutlined />
                 <Typography className={classNames(styles["temperature"])}>{temperature}&deg;</Typography>
+                <AddCircleOutlinedIcon />
 
-                <Button
+                {/* <Button
                     variant="text"
                     onClick={increaseTemperature}
                     className={classNames(styles["plusBtn"])} >
                     <AddCircleOutlinedIcon size="large" />
-                </Button>
+                </Button> */}
 
 
             </div>

@@ -42,19 +42,21 @@ export default function Thermostat({ data }) {
             <div className={classNames(styles["controls"])}>
                 <Button
                     variant="text"
-                    onClick={increaseTemperature}
-                    className={classNames(styles["plusBtn"])} >
-                    <AddCircleOutlined size="large" />
+                    onClick={decreaseTemperature}
+                    className={classNames(styles["minusBtn"])}>
+                    <RemoveCircleOutlined />
                 </Button>
 
                 <Typography className={classNames(styles["temperature"])}>{temperature}&deg;</Typography>
 
                 <Button
                     variant="text"
-                    onClick={decreaseTemperature}
-                    className={classNames(styles["minusBtn"])}>
-                    <RemoveCircleOutlined />
+                    onClick={increaseTemperature}
+                    className={classNames(styles["plusBtn"])} >
+                    <AddCircleOutlined size="large" />
                 </Button>
+
+
             </div>
 
             <div className={classNames(styles["linear-graphic"])}>
@@ -63,7 +65,7 @@ export default function Thermostat({ data }) {
                     height={100}
                     data={data}
                 >
-                    <Line type="monotone" dataKey={"temperature"} stroke="#ffff"/>
+                    <Line type="monotone" dataKey={"temperature"} stroke="#ffff" />
                 </ComposedChart>
             </div>
 

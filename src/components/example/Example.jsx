@@ -7,14 +7,14 @@ import Header from "../header/Header";
 import User from "../user/User"
 import Weather from "../weather/Weather";
 import Time from "../time/Time";
-import Termostat from "../termostat/Termostat"; 
+import Thermostat from "../thermostat/Thermostat";
 
 export default function Copyright() {
 
   return (
     <div className={classNames(styles.wrapper)}>
       
-          <Termostat data={
+          <Thermostat data={
             [
               { temperature: 25, hour: 12 },
               { temperature: 13, hour: 13 },

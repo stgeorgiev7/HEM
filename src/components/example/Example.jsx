@@ -9,12 +9,19 @@ import Weather from "../weather/Weather";
 import Time from "../time/Time";
 import Thermostat from "../thermostat/Thermostat";
 import Card from "../card/Card";
+import Scenes from "../scenes/Scenes";
 
 export default function Copyright() {
 
   return (
     <div className={classNames(styles.wrapper)}>
-        <Card />
+        <Scenes cards=
+        {[{"iconUrl":"/images/morning.svg"},
+        {"iconUrl":"/images/alarm-clock.svg"},
+        {"iconUrl":"/images/shower.svg"},
+        {"iconUrl":"/images/tea-cup.svg"},
+        {"iconUrl":"/images/rock.svg"},
+        {"iconUrl":"/images/plus.svg","outlined":true}]} />
     </div>
   );
 }

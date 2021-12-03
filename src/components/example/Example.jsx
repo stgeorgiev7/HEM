@@ -14,7 +14,7 @@ export default function Copyright() {
 
   return (
     <div className={classNames(styles.wrapper)}>
-        <Card iconUrl="/images/alarm-clock.svg"/>
+        <Card />
     </div>
   );
 }

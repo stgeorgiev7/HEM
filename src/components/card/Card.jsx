@@ -11,7 +11,7 @@ export default function Card({ iconUrl, outlined = false, onClick }) {
                 onClick={onClick}
                 sx={outlined ? { border: "3px solid #7441F3" } : { border: 'none' }}>
                 <CardContent>
-                    <img className={classNames(styles["card-image"])} src={iconUrl ? iconUrl : ""}></img>
+                    {iconUrl ? <img className={classNames(styles["card-image"])} src={iconUrl}></img> : <div></div>}           
                 </CardContent>
             </CardContainer>
         </div>

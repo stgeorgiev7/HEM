@@ -4,7 +4,10 @@
     height: 100%;
     div[class^='MuiPaper-root'] {
         background-color: rgba(116, 65, 243, 0.2);
-
+    }
+    div{
+        display: flex;
+        justify-content: center;
     }
 }
 

@@ -1,18 +1,17 @@
 import styles from "./Card.module.scss"
 import classNames from "classnames"
-import { Card as CardContainer } from "@mui/material";
+import { Card as CardContainer, CardMedia } from "@mui/material";
 import { CardContent } from "@mui/material";
 
-export default function Card({ iconUrl, outlined = false, onClick }) {
+export default function Card({ iconUrl, outlined = false, onClick, videoUrl }) {
 
     return (
         <div className={classNames(styles["card"])}>
             <CardContainer
                 onClick={onClick}
-                sx={outlined ? { border: "3px solid #7441F3" } : { border: 'none' }}>
-                <CardContent>
-                   <img className={classNames(styles["card-image"])} src={iconUrl}></img>           
-                </CardContent>
+                sx={outlined ? { border: "5px solid #7441F3", width: "100%" } : { border: 'none', width: "100%" }}>
+                {videoUrl && <CardMedia component="video" src={videoUrl} className={classNames(styles["card-video"])} autoPlay />}
+                {iconUrl && <img className={classNames(styles["card-image"])} src={iconUrl}></img>}
             </CardContainer>
         </div>
     )

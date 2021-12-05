@@ -4,7 +4,7 @@ import { Grid } from "@mui/material";
 import Card from "../card/Card";
 import { useEffect, useState } from "react";
 
-export default function Cameras({ cameras, hasButton = false }) {
+export default function Cameras({ cameras, hasButton }) {
     const [videoUrl, setVideoUrl] = useState('videos/bathroom.mp4') // default state should be the first video from cameras arr ??? 
 
     const changeVideo = (event) => {

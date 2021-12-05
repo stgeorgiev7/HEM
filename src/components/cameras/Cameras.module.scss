@@ -3,6 +3,8 @@
 }
 
 .video-item{
+    display: flex !important;
+    justify-content: center !important;
     height: 90px !important;
 }
 
@@ -19,7 +21,7 @@
 
 .btn{
     position: absolute;
-    top: 260px;
+    top: 268px;
     width: 206px;
 }
 

@@ -1,0 +1,29 @@
+.cameras-container{
+    margin: 37px !important;
+}
+
+.video-item{
+    height: 90px !important;
+}
+
+.container{
+    display: flex;
+    width: 805px;
+    height: 390px;
+}
+
+.items{
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn{
+    position: absolute;
+    top: 260px;
+    width: 206px;
+}
+
+.scrolable{
+    max-height: 205px;
+    overflow: auto;
+}

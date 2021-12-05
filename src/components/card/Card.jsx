@@ -10,8 +10,8 @@ export default function Card({ iconUrl, outlined = false, onClick, videoUrl }) {
             <CardContainer
                 onClick={onClick}
                 sx={outlined ? { border: "5px solid #7441F3", width: "100%" } : { border: 'none', width: "100%" }}>
-                {videoUrl && <CardMedia component="video" src={videoUrl} className={classNames(styles["card-video"])}/>}
-                {iconUrl && <img className={classNames(styles["card-image"])} src={iconUrl}></img>}
+                {videoUrl && <video src={videoUrl} className={classNames(styles["card-video"])} />}
+                {iconUrl && <img src={iconUrl} className={classNames(styles["card-image"])}></img>}
             </CardContainer>
         </div>
     )

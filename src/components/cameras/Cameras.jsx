@@ -20,11 +20,11 @@ export default function Cameras({ cameras, hasButton = false }) {
                     <Card videoUrl={video}></Card>
                 </Grid>
                 <Grid container item xs={4} className={classNames(styles["items"], hasButton ? styles['scrolable'] : '')}>
-                    {/* {cameras && cameras.map(el =>
+                    {cameras && cameras.map(el =>
                     (<Grid item xs={5} onClick={getSrc} className={classNames(styles["video-item"])}>
                         <Card videoUrl={el.videoUrl}></Card>
-                    </Grid>))} */}
-                    <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
+                    </Grid>))}
+                    {/* <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
                         <Card videoUrl={'videos/front-door.mp4'}></Card>
                     </Grid>
                     <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
@@ -41,7 +41,7 @@ export default function Cameras({ cameras, hasButton = false }) {
                     </Grid>
                     <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
                         <Card videoUrl={'videos/balcony.mp4'} ></Card>
-                    </Grid>
+                    </Grid> */}
                     {hasButton &&
                         <Grid item className={classNames(styles["btn"])}>
                             <Card iconUrl={'images/plus.svg'} outlined></Card>

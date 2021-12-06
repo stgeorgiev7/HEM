@@ -3,9 +3,17 @@
 }
 
 .video-item{
-    display: flex !important;
-    justify-content: center !important;
-    height: 90px !important;
+    width: 97px;
+    height: 90px;
+    border-radius: 20px;
+    object-fit: fill;
+}
+
+.video-player{
+    width: 478px;
+    height: 315px;
+    border-radius: 20px;
+    object-fit: fill;
 }
 
 .container{
@@ -21,15 +29,12 @@
 
 .btn{
     position: absolute;
-    top: 268px;
-    width: 206px;
+    top: 259px;
+    width: 210px;
+    height: 90px;
 }
 
 .scrolable{
     max-height: 205px;
     overflow: auto;
-}
-
-.video-player{
-    width: auto;
 }

@@ -12,11 +12,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 16px;
     }
 }
 
 .card-image {
-    // width: 50%;
+    width: 50%;
 }
 
 .card-video {

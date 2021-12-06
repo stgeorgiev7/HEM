@@ -43,10 +43,10 @@ export default function Cameras({ cameras, hasButton }) {
                     <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
                         <Card videoUrl={'videos/balcony.mp4'} ></Card>
                     </Grid>
-                    {hasButton ?
+                    {hasButton &&
                         <Grid item className={classNames(styles["btn"])}>
                             <Card iconUrl={'images/plus.svg'} outlined></Card>
-                        </Grid> : ""}
+                        </Grid>}
                 </Grid>
             </Grid>
         </div>

@@ -13,7 +13,7 @@ export default function Cameras({ cameras, hasButton }) {
     }
 
     useEffect(() => {
-        const video = document.querySelector('.video-player video')
+        const video = document.querySelector('video')
         video.autoplay = true;
         video.load();
     }, [videoUrl])
@@ -21,27 +21,27 @@ export default function Cameras({ cameras, hasButton }) {
     return (
         <div className={classNames(styles["container"])}>
             <Grid container className={classNames(styles["cameras-container"])}>
-                <Grid item xs={8} className={classNames("video-player")}>
-                    <Card videoUrl={videoUrl}></Card>
+                <Grid item xs={8} >
+                    <video src={videoUrl} className={classNames(styles["video-player"])}></video>
                 </Grid>
                 <Grid container item xs={4} className={classNames(styles["items"], hasButton ? styles['scrolable'] : '')}>
-                    <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
-                        <Card videoUrl={'videos/front-door.mp4'}></Card>
+                    <Grid item xs={5} onClick={changeVideo}>
+                        <video src={'videos/front-door.mp4'} className={classNames(styles["video-item"])}></video>
                     </Grid>
-                    <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
-                        <Card videoUrl={'videos/front-door.mp4'}></Card>
+                    <Grid item xs={5} onClick={changeVideo} >
+                        <video src={'videos/front-door.mp4'} className={classNames(styles["video-item"])}></video>
                     </Grid>
-                    <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
-                        <Card videoUrl={'videos/front-door.mp4'}></Card>
+                    <Grid item xs={5} onClick={changeVideo} >
+                        <video src={'videos/front-door.mp4'} className={classNames(styles["video-item"])}></video>
                     </Grid>
-                    <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
-                        <Card videoUrl={'videos/garden.mp4'}></Card>
+                    <Grid item xs={5} onClick={changeVideo} >
+                        <video src={'videos/garden.mp4'} className={classNames(styles["video-item"])}></video>
                     </Grid>
-                    <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
-                        <Card videoUrl={'videos/kitchen.mp4'} ></Card>
+                    <Grid item xs={5} onClick={changeVideo} >
+                        <video src={'videos/kitchen.mp4'} className={classNames(styles["video-item"])}></video>
                     </Grid>
-                    <Grid item xs={5} onClick={changeVideo} className={classNames(styles["video-item"])}>
-                        <Card videoUrl={'videos/balcony.mp4'} ></Card>
+                    <Grid item xs={5} onClick={changeVideo} >
+                        <video src={'videos/balcony.mp4'} className={classNames(styles["video-item"])}></video>
                     </Grid>
                     {hasButton &&
                         <Grid item className={classNames(styles["btn"])}>

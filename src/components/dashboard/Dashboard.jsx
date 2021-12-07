@@ -14,14 +14,15 @@ import Energy from "../energy/Energy";
 export default function Dashboard() {
 
     return (
-        <div>
+        <div className={classNames(styles["dashboard"])}>
             <Navigation />
 
             <Container>
                 <Grid container>
+
                     <Header
                         left={<User name={"John Doe"} />}
-                        right={[<Weather degrees={3} type="snowy" key={"weather"}/>, <Time key={"time"}/>]}
+                        right={[<Weather degrees={3} type="snowy" key={"weather"} />, <Time key={"time"} />]}
                     />
 
                 </Grid>

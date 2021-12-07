@@ -1,7 +1,7 @@
 import styles from "./Scenes.module.scss";
 import classNames from "classnames";
 import Card from "../card/Card";
-import { Grid } from "@mui/material";
+import { Grid, Container } from "@mui/material";
 
 export default function Scenes({ cards = [] }) {
 
@@ -11,9 +11,8 @@ export default function Scenes({ cards = [] }) {
                 {
                     cards.map((card, index) => {
                         return (
-                            <Grid item>
-                                <Card iconUrl={card.iconUrl} outlined={card.outlined} key={index} />
-
+                            <Grid item xs={6} sx={{padding: "10px"}} key={index}>
+                                    <Card iconUrl={card.iconUrl} outlined={card.outlined} key={index} />
                             </Grid>
                         );
                     })

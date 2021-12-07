@@ -4,7 +4,6 @@ import { ComposedChart, Line, CartesianGrid, Area, AreaChart, XAxis } from "rech
 import { Grid, Typography, Select, MenuItem } from "@mui/material";
 
 export default function Energy({ data = [] }) {
-    console.log(data)
 
     return (
         <div>

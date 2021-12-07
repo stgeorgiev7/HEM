@@ -15,13 +15,7 @@ export default function Copyright() {
 
   return (
     <div className={classNames(styles.wrapper)}>
-        <Scenes cards=
-        {[{"iconUrl":"/images/morning.svg"},
-        {"iconUrl":"/images/alarm-clock.svg"},
-        {"iconUrl":"/images/shower.svg"},
-        {"iconUrl":"/images/tea-cup.svg"},
-        {"iconUrl":"/images/rock.svg"},
-        {"iconUrl":"/images/plus.svg","outlined":true}]} />
+       
     </div>
   );
 }

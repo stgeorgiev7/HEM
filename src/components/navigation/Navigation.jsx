@@ -60,7 +60,7 @@ export default function Navigation() {
                     </ListItemIcon>
                     <ListItemText primary="Living room" />
                 </ListItem>
-                <ListItem buttonclassName={classNames(styles['list-item'])}>
+                <ListItem button className={classNames(styles['list-item'])}>
                     <ListItemIcon>
                         <BedOutlinedIcon fontSize="large" />
                     </ListItemIcon>
@@ -73,7 +73,7 @@ export default function Navigation() {
                     </ListItemIcon>
                     <ListItemText primary="Bathroom" />
                 </ListItem>
-                <ListItem buttonclassName={classNames(styles['list-item'])}>
+                <ListItem button className={classNames(styles['list-item'])}>
                     <ListItemIcon>
                         <BedOutlinedIcon fontSize="large" />
                     </ListItemIcon>

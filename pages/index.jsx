@@ -1,7 +1,5 @@
-import Cameras from "../src/components/cameras/Cameras";
-import Example from "../src/components/example/Example";
-import Rooms from "../src/components/rooms/Rooms";
+import Dashboard from "../src/components/dashboard/Dashboard";
 
 export default function Index() {
-  return <Rooms />;
+  return <Dashboard />;
 }

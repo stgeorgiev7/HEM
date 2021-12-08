@@ -3,11 +3,22 @@
     justify-content: center;
     height: 183px;
     width: 243px;
-
+    position: relative;
+    
     div[class^='MuiPaper-root'] {
         background-color: rgba(116, 65, 243, 0.2);
         flex-direction: column;
     }
+
+    div[class^='MuiChip-root'] {
+        height: 25px;
+        background-color: rgba(235, 103, 92, 1);
+        border-radius: 7px;
+        position: absolute;
+        top: 12px;
+        right: 20px;
+    }
+    
     div{
         display: flex;
         justify-content: center;
@@ -16,8 +27,26 @@
     }
 }
 
-.card-image {
-    width: 50%;
+.device-off {
+    background-color: rgba(116, 65, 243, 1) !important;
+
+    img{
+        filter: brightness(0) invert(1);
+    }
+    p {
+        color: white;
+    }
+}
+
+.device-offline {
+    background-color: rgba(235, 103, 92, 0.35) !important;
+
+    img{
+        filter: brightness(0) invert(1);
+    }
+    p {
+        color: white;
+    }
 }
 
 .card-video {

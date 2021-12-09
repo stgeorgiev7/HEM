@@ -21,7 +21,7 @@ export default function Devices({ devices }) {
                     <Card iconUrl={"images/plug.svg"} variant="offline"></Card>
                 </Grid>
                 <Grid item>
-                    <Card iconUrl={"images/plus.svg"}></Card>
+                    <Card iconUrl={"images/plus.svg"} outlined></Card>
                 </Grid>
             </Grid>
         </div>

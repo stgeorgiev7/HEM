@@ -12,6 +12,7 @@
     div[class^='MuiChip-root'] {
         height: 25px;
         background-color: rgba(235, 103, 92, 1);
+        font-weight: bold;
         border-radius: 7px;
         position: absolute;
         top: 12px;
@@ -41,10 +42,10 @@
     background-color: rgba(235, 103, 92, 0.35) !important;
 
     img{
-        filter: brightness(0) invert(1);
+        filter: invert(50%) sepia(57%) saturate(691%) hue-rotate(315deg) brightness(96%) contrast(91%);
     }
     p {
-        color: white;
+        color: #EB675C
     }
 }
 

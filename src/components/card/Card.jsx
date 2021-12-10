@@ -17,7 +17,7 @@ export default function Card({ iconUrl, outlined = false, onClick, title, varian
                 {variant === "offline" && <Chip icon label="!" />}
                 {iconUrl && <img src={iconUrl} ></img>}
                 {title && <Typography className={classNames(styles["text"])}>{title}</Typography>}
-                {variant && <Typography className={classNames(styles["text"])}>{variant}</Typography>}
+                {/* {variant && <Typography className={classNames(styles["text"])}>{variant}</Typography>} */}
             </CardContainer>
         </div >
     )

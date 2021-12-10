@@ -8,18 +8,11 @@ export default function Devices({ devices }) {
         <div className={classNames(styles["devices-wrapper"])}>
             <Typography variant="h4" className={classNames(styles["devices-title"])}>Devices</Typography>
             <Grid container spacing={3} >
-                <Grid item >
-                    <Card iconUrl={"images/bulb.svg"} variant="on"></Card>
-                </Grid>
-                <Grid item >
-                    <Card iconUrl={"images/bulb.svg"} variant="off"></Card>
-                </Grid>
-                <Grid item >
-                    <Card iconUrl={"images/plug.svg"} variant="off"></Card>
-                </Grid>
-                <Grid item>
-                    <Card iconUrl={"images/plug.svg"} variant="offline"></Card>
-                </Grid>
+                {devices && devices.map(device =>
+                    <Grid item >
+                        <Card iconUrl={device.iconUrl} variant={device.title} title={device.title}></Card>
+                    </Grid>)
+                }
                 <Grid item>
                     <Card iconUrl={"images/plus.svg"} outlined></Card>
                 </Grid>

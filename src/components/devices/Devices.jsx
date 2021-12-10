@@ -13,9 +13,9 @@ export default function Devices({ devices }) {
                         <Card iconUrl={device.iconUrl} variant={device.title} title={device.title}></Card>
                     </Grid>)
                 }
-                <Grid item>
+                {/* <Grid item>
                     <Card iconUrl={"images/plus.svg"} outlined></Card>
-                </Grid>
+                </Grid> */}
             </Grid>
         </div>
     )

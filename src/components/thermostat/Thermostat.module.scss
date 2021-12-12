@@ -1,9 +1,9 @@
 .termostat-container {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 400px;
-    
+    max-width: 50rem;
+    max-height: 27rem;
+    padding-top: 10px;
 }
 
 .circular {
@@ -19,7 +19,9 @@
     color: #ffff !important;
     margin: 0;
     position: relative;
-    left: 115px;
+    left: 7.5rem;
+    align-items: center;
+
 }
 
 .right-circle  {
@@ -27,7 +29,9 @@
     color: rgba(#ffff, 20%) !important;
     margin: 0;
     position: relative;
-    right: 115px;
+    right: 7rem;
+    align-items: center;
+
 }
 
 .controls {

@@ -16,11 +16,10 @@ export default function Dashboard() {
     return (
         <div className={classNames(styles["dashboard"])}>
 
-            <Container className={classNames(styles["container"])}>
+            <Container className={classNames(styles["container"])} maxWidth="xl">
                 <Grid container >
                     <Grid item>
-                    <Navigation />
-
+                        <Navigation />
                     </Grid>
 
                     <Grid item xs={12}>
@@ -33,9 +32,9 @@ export default function Dashboard() {
 
                 </Grid>
 
-                <Grid container spacing={8}>
+                <Grid container maxWidth="xl">
 
-                    <Grid item xs={6} md={6} xl={6}>
+                    <Grid item xs={6}>
                         <Thermostat data={[
                             { temperature: 25, hour: 12 },
                             { temperature: 13, hour: 13 },
@@ -46,7 +45,7 @@ export default function Dashboard() {
                         ]} />
                     </Grid>
 
-                    <Grid item xs={6} md={6}>
+                    <Grid item xs={6}  >
                         <Scenes cards=
                             {[{ "iconUrl": "/images/morning.svg" },
                             { "iconUrl": "/images/alarm-clock.svg" },

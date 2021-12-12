@@ -1,9 +1,9 @@
 .card {
     display: flex;
     justify-content: center;
+    height: 12rem;
+    width: 13rem;
     position: relative;
-    width: 100%;
-    height: 100%;
     div[class^='MuiPaper-root'] {
         background-color: rgba(116, 65, 243, 0.2);
         flex-direction: column;
@@ -31,12 +31,12 @@
 .device-off {
     background-color: rgba(116, 65, 243, 1) !important;
 
-    img{
         filter: brightness(0) invert(1);
+    img{
     }
     p {
-        color: white;
     }
+        color: white;
 }
 
 .device-offline {

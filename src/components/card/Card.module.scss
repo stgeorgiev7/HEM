@@ -31,12 +31,12 @@
 .device-off {
     background-color: rgba(116, 65, 243, 1) !important;
 
-        filter: brightness(0) invert(1);
     img{
+        filter: brightness(0) invert(1);
     }
     p {
-    }
         color: white;
+    }
 }
 
 .device-offline {

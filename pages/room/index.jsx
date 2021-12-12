@@ -22,9 +22,9 @@ export default function Room() {
                 </Grid>
                 <Grid item xs={6}>
                     <Typography variant="h4" className={classNames(styles["title"])}>Cameras</Typography>
-                    <Cameras hasButton={true}/>
+                    <Cameras />
                 </Grid>
             </Grid>
         </Container>
     )
-}
+} 

@@ -1,6 +1,6 @@
 import styles from "./Cameras.module.scss";
 import classNames from "classnames";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import Card from "../card/Card";
 import { useEffect, useState } from "react";
 

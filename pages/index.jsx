@@ -1,7 +1,5 @@
-import Cameras from "../src/components/cameras/Cameras";
-import Devices from "../src/components/devices/Devices";
-import Example from "../src/components/example/Example";
-import Rooms from "../src/components/rooms/Rooms";
+import Modal from "../src/components/modal/Modal";
+import Dashboard from "../src/components/dashboard/Dashboard";
 
 export default function Index() {
   return <Devices />;

@@ -1,9 +1,9 @@
 .card {
     display: flex;
     justify-content: center;
-    position: relative;
-    width: 243px;
-    height: 183px;
+    height: 12rem;
+    width: 13rem;
+
     div[class^='MuiPaper-root'] {
         background-color: rgba(116, 65, 243, 0.2);
         flex-direction: column;
@@ -28,15 +28,8 @@
     }
 }
 
-.device-off {
-    background-color: rgba(116, 65, 243, 1) !important;
-
-    img{
-        filter: brightness(0) invert(1);
-    }
-    p {
-        color: white;
-    }
+.card-image {
+    // width: 50%;
 }
 
 .device-offline {

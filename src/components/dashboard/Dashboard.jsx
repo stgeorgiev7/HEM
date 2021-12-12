@@ -15,19 +15,24 @@ export default function Dashboard() {
 
     return (
         <div className={classNames(styles["dashboard"])}>
-            <Navigation />
 
-            <Container>
-                <Grid container>
+            <Container className={classNames(styles["container"])} maxWidth="xl">
+                <Grid container >
+                    <Grid item>
+                        <Navigation />
+                    </Grid>
 
-                    <Header
-                        left={<User name={"John Doe"} />}
-                        right={[<Weather degrees={3} type="snowy" key={"weather"} />, <Time key={"time"} />]}
-                    />
+                    <Grid item xs={12}>
+                        <Header
+                            left={<User name={"John Doe"} />}
+                            right={[<Weather degrees={3} type="snowy" key={"weather"} />, <Time key={"time"} />]}
+                        />
+
+                    </Grid>
 
                 </Grid>
 
-                <Grid container>
+                <Grid container maxWidth="xl">
 
                     <Grid item xs={6}>
                         <Thermostat data={[
@@ -40,7 +45,7 @@ export default function Dashboard() {
                         ]} />
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item xs={6}  >
                         <Scenes cards=
                             {[{ "iconUrl": "/images/morning.svg" },
                             { "iconUrl": "/images/alarm-clock.svg" },
@@ -53,11 +58,11 @@ export default function Dashboard() {
 
                 <Grid container>
 
-                    <Grid item xs={6}>
+                    <Grid item xs={6} md={6}>
                         <Cameras />
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item xs={6} md={6}>
                         <Energy data={[
                             { energy: 25, hour: 12 },
                             { energy: 13, hour: 13 },

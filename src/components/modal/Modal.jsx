@@ -1,9 +1,10 @@
-import style from "./Modal.module.scss";
+import styles from "./Modal.module.scss";
 import classnames from "classnames";
 import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, Button } from "@mui/material";
+import classNames from "classnames";
 
-export default function Modal({open=true, title="modal title", buttonText="modal action", handleSubmit, handleClose}) {
+export default function Modal({open=true, title="modal title", buttonText="modal action", handleSubmit, handleClose, children="Modal Content"}) {
     const [openDialog, setOpen]=useState(open);
     
     handleClose = () => {
@@ -11,13 +12,12 @@ export default function Modal({open=true, title="modal title", buttonText="modal
     };
 
     return(
-        <div>
-            <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>{title}</DialogTitle>
-                <DialogContent>Modal Content</DialogContent>
+        <div >
+            <Dialog open={open} onClose={handleClose} className={classNames(styles["modal-container"])}>
+                <DialogTitle className={classNames(styles.title)}>{title}</DialogTitle>
+                <DialogContent className={classNames(styles.content)}>{children}</DialogContent>
                 <Button onClick={handleSubmit}>{buttonText}</Button>
             </Dialog>
-
         </div>
     )
 }

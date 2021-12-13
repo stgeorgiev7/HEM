@@ -8,8 +8,8 @@ export default function Devices({ devices }) {
         <div className={classNames(styles["devices-wrapper"])}>
             <Grid container spacing={2} >
                 {devices && devices.map(device => {
-                    return <Grid item sx={{ width: "13rem", height: "12rem" }}>
-                        <Card iconUrl={device.iconUrl} variant={device.title} title={device.title}></Card>
+                    return <Grid item>
+                        <Card iconUrl={device.iconUrl} variant={device.variant} title={device.title}></Card>
                     </Grid>
                 })
                 }

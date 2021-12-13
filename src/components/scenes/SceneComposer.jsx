@@ -9,7 +9,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
     const [roomCards, setRoomCards] = useState();
 
     useMemo(() => {
-        const data = rooms.rooms.map(room => {
+        const data = rooms.map(room => {
             return {
                 "id": room.id,
                 "name": room.name,
@@ -21,7 +21,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
     }, [devices, rooms])
 
     function getCardsForRoom(roomId) {
-        const devicesInRoom = devices.devices.filter(device => device.roomId === roomId)
+        const devicesInRoom = devices.filter(device => device.roomId === roomId)
         const cards = []
 
         devicesInRoom.forEach(dev => {

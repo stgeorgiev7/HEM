@@ -6,10 +6,10 @@ import Card from "../card/Card";
 export default function Devices({ devices }) {
     return (
         <div className={classNames(styles["devices-wrapper"])}>
-            <Grid container spacing={2} >
-                {devices && devices.map(device => {
-                    return <Grid item>
-                        <Card iconUrl={device.iconUrl} variant={device.variant} title={device.title}></Card>
+            <Grid container spacing={1} >
+                {devices && devices.map((device, i) => {
+                    return <Grid item xs={4} key={i}>
+                        <Card iconUrl={device.iconUrl} variant={device.title} title={device.title} ></Card>
                     </Grid>
                 })
                 }

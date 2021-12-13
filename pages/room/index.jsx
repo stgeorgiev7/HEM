@@ -6,9 +6,9 @@ import Header from "../../src/components/header/Header.jsx"
 import Devices from "../../src/components/devices/Devices.jsx"
 import Cameras from "../../src/components/cameras/Cameras.jsx"
 
-export default function index() {
+export default function Index() {
     const room = <Typography variant="h1">Living room</Typography>
-    
+
     return (
         <Container className={classNames(styles["container-wrapper"])}>
             <Paper className={classNames(styles["paper"])}></Paper>

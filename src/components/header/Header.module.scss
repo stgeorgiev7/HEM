@@ -1,5 +1,9 @@
 .header-wrapper {
     width: 100%;
+
+    div[class^='MuiPaper-root'] {
+        min-height: 6rem;
+    }
 }
 
 

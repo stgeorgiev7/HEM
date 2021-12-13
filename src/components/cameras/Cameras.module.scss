@@ -20,6 +20,8 @@
     display: flex;
     width: 805px;
     height: 390px;
+    background: #FFFFFF;
+    border-radius: 20px;
 }
 
 .items{
@@ -37,4 +39,8 @@
 .scrolable{
     max-height: 205px;
     overflow: auto;
+}
+
+.selected{
+    border: 5px solid rgba(116, 65, 243, 1);
 }

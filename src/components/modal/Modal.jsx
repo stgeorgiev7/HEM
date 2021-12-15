@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, Button } from "@mui/material";
 import classNames from "classnames";
 
-export default function Modal({open=true, title="modal title", buttonText="modal action", handleSubmit, handleClose, children="Modal Content"}) {
+export default function Modal({open=true, title="modal title", buttonText="modal action", handleSubmit, handleClose, children=[]}) {
     const [openDialog, setOpen]=useState(open);
     
     handleClose = () => {
@@ -15,7 +15,11 @@ export default function Modal({open=true, title="modal title", buttonText="modal
         <div >
             <Dialog open={open} onClose={handleClose} className={classNames(styles["modal-container"])}>
                 <DialogTitle className={classNames(styles.title)}>{title}</DialogTitle>
-                <DialogContent className={classNames(styles.content)}>{children}</DialogContent>
+                <DialogContent className={classNames(styles.content)}>
+                    {children.map((element) => {
+                        return element;
+                } )}
+                </DialogContent>
                 <Button onClick={handleSubmit}>{buttonText}</Button>
             </Dialog>
         </div>

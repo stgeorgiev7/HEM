@@ -16,7 +16,7 @@ export default function Modal({open=true, title="modal title", buttonText="modal
             <Dialog open={open} onClose={handleClose} className={classNames(styles["modal-container"])}>
                 <DialogTitle className={classNames(styles.title)}>{title}</DialogTitle>
                 <DialogContent className={classNames(styles.content)}>
-                    {children.map((element) => {
+                    {children.map((element, index) => {
                         return element;
                 } )}
                 </DialogContent>

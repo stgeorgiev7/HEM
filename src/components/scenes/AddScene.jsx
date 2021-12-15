@@ -1,5 +1,5 @@
 import Modal from "../modal/Modal";
-import SceneComposer from "../scenes/SceneComposer"
+import SceneComposer from "./SceneComposer"
 import styles from "./AddScene.module.scss";
 import classnames from "classnames";
 import { TextField } from "@mui/material";

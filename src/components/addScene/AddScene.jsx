@@ -6,7 +6,7 @@ import { TextField } from "@mui/material";
 import roomsData from "../../../data/rooms.json"
 import devicesData from "../../../data/devices.json"
 
-export default function AddScene({devices, rooms, onScene, onSubmit}) {
+export default function AddScene({open, handleClose, devices, rooms, onScene, onSubmit}) {
     
 
     const sceneCompaser = <SceneComposer devices={devicesData?.devices} rooms={roomsData.rooms}></SceneComposer>;
@@ -15,7 +15,8 @@ export default function AddScene({devices, rooms, onScene, onSubmit}) {
     return(
         <div>
             <Modal
-             open={onScene} 
+             open={open} 
+             onClose={handleClose}
              handleSubmit={onSubmit}  
              title="ADD SCENE"
              buttonText="ADD NEW SCENE"

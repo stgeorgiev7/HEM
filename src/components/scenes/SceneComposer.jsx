@@ -5,15 +5,20 @@ import Scenes from "./Scenes"
 import { useMemo } from "react"
 import { useState } from "react"
 
-export default function SceneComposer({ devices, rooms, selected, onScene }) {
+export default function SceneComposer({ devices, rooms, selected, onScene, checkSelect }) {
     const [roomCards, setRoomCards] = useState();
+
+    function handleClick(e) {
+        checkSelect(e.target.id);
+    };
 
     useMemo(() => {
         const data = rooms.map(room => {
             return {
-                "id": room.id,
-                "name": room.name,
-                "cards": getCardsForRoom(room.id)
+                "id": room?.id,
+                "name": room?.name,
+                "cards": getCardsForRoom(room.id),
+                "outlined": selected === room?.id ? true : false
             }
         })
 
@@ -29,7 +34,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
                 "iconUrl": dev.iconUrl,
                 "outlined": selected ? true : false,
                 "title": dev.name,
-                "variant": "on"
+                "variant": "on",
             })
             cards.push({
                 "iconUrl": dev.iconUrl,
@@ -46,7 +51,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
                 return (
                     <Grid item xs={12} key={room.id}>
                         <Typography variant="h4">{room.name}</Typography>
-                        <Scenes cards={room.cards} />
+                        <Scenes cards={room.cards} onClick={handleClick} />
                     </Grid>
                 )
             })}

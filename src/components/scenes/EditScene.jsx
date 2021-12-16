@@ -1,3 +1,4 @@
+import {useState, useEffect} from "react";
 import styles from "./EditScene.module.scss";
 import classNames from "classnames";
 import SceneComposer from "./SceneComposer";
@@ -8,8 +9,11 @@ import devicesData from "../../../data/devices.json";
 
 export default function EditScene({open, handleClose, devices, rooms, onScene, onSubmit, selected}) {
     
+    const [select, setSelect] = useState();
 
-    const sceneCompaser = <SceneComposer devices={devicesData?.devices} rooms={roomsData.rooms}></SceneComposer>;
+    
+
+    const sceneCompaser = <SceneComposer devices={devicesData?.devices} rooms={roomsData.rooms} selected={selected}></SceneComposer>;
     const newTitle = <TextField placeholder="Back Home"></TextField>;
 
     return(

@@ -27,6 +27,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
         devicesInRoom.forEach(dev => {
             cards.push({
                 "iconUrl": dev.iconUrl,
+                "outlined": selected ? true : false,
                 "title": dev.name,
                 "variant": "on"
             })

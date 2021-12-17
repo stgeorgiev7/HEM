@@ -8,17 +8,20 @@ import { useState } from "react"
 export default function SceneComposer({ devices, rooms, selected, onScene, checkSelect }) {
     const [roomCards, setRoomCards] = useState();
 
+    console.log(selected);
+
     function handleClick(e) {
+        console.log(e.target);
         checkSelect(e.target.id);
     };
 
     useMemo(() => {
         const data = rooms.map(room => {
+
             return {
                 "id": room?.id,
                 "name": room?.name,
                 "cards": getCardsForRoom(room.id),
-                "outlined": selected.id === room?.id ? true : false
             }
         })
 
@@ -35,15 +38,22 @@ export default function SceneComposer({ devices, rooms, selected, onScene, check
                 "outlined": selected ? true : false,
                 "title": dev.name,
                 "variant": "on",
+                "outlined": selected?.id === dev?.id ? true : false
+
             })
             cards.push({
                 "iconUrl": dev.iconUrl,
                 "title": dev.name,
-                "variant": "off"
+                "variant": "off",
+                "outlined": selected?.id === dev?.id ? true : false
+
             })
         })
         return cards;
     }
+
+    console.log(roomCards);
+    console.log(selected)
 
     return (
         <Grid container>

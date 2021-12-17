@@ -11,7 +11,7 @@ export default function EditScene({open, handleClose, devices, rooms, onScene, o
 
     const [select, setSelect] = useState();
 
-    console.log(select)
+    console.log(selected.id);
     
     const sceneCompaser = <SceneComposer devices={devicesData?.devices} rooms={roomsData.rooms} selected={selected} checkSelect={setSelect} />;
     const newTitle = <TextField placeholder="Back Home"></TextField>;

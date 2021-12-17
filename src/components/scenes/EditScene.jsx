@@ -9,11 +9,11 @@ import devicesData from "../../../data/devices.json";
 
 export default function EditScene({open, handleClose, devices, rooms, onScene, onSubmit, selected}) {
 
-    const [select, setSelect] = useState();
+
 
     console.log(selected.id);
     
-    const sceneCompaser = <SceneComposer devices={devicesData?.devices} rooms={roomsData.rooms} selected={selected} checkSelect={setSelect} />;
+    const sceneCompaser = <SceneComposer devices={devices} rooms={rooms} selected={selected} />;
     const newTitle = <TextField placeholder="Back Home"></TextField>;
 
     return(

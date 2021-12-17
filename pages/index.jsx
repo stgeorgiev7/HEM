@@ -18,7 +18,7 @@ export default function Index() {
         {
           "name": "Living Room",
           "type": "living-room",
-          "id": 1,
+          "id": 4,
           "propertyId": 1,
           "userId": 1
         }

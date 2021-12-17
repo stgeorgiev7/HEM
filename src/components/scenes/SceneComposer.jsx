@@ -18,7 +18,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene, check
                 "id": room?.id,
                 "name": room?.name,
                 "cards": getCardsForRoom(room.id),
-                "outlined": selected === room?.id ? true : false
+                "outlined": selected.id === room?.id ? true : false
             }
         })
 

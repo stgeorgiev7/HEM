@@ -13,8 +13,9 @@ export default function EditScene({open, handleClose, devices, rooms, onScene, o
 
     console.log(selected.id);
     
-    const sceneCompaser = <SceneComposer devices={[...devices]} rooms={[...rooms]} selected={selected} />;
+    const sceneCompaser = <SceneComposer devices={devices} rooms={rooms} selected={selected} />;
     const newTitle = <TextField placeholder="Back Home"></TextField>;
+    const children = [sceneCompaser, newTitle]
 
     return(
         <div>
@@ -24,7 +25,7 @@ export default function EditScene({open, handleClose, devices, rooms, onScene, o
              handleSubmit={onSubmit}  
              title="EDIT SCENE"
              buttonText="SAVE CHANGES"
-             children={[newTitle, sceneCompaser]} />
+             children={[...children]} />
         </div>
     )
 }

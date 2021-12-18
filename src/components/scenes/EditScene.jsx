@@ -9,14 +9,6 @@ import devicesData from "../../../data/devices.json";
 
 export default function EditScene({open, handleClose, devices, rooms, onScene, onSubmit, selected}) {
 
-
-
-    console.log(selected.id);
-    
-    const sceneCompaser = <SceneComposer devices={devices} rooms={rooms} selected={selected} />;
-    const newTitle = <TextField placeholder="Back Home"></TextField>;
-    const children = [sceneCompaser, newTitle]
-
     return(
         <div>
             <Modal
@@ -25,7 +17,10 @@ export default function EditScene({open, handleClose, devices, rooms, onScene, o
              handleSubmit={onSubmit}  
              title="EDIT SCENE"
              buttonText="SAVE CHANGES"
-             children={[...children]} />
+             >
+                <TextField placeholder="Back Home"></TextField>
+                <SceneComposer devices={devices} rooms={rooms} selected={selected} />
+            </Modal>
         </div>
     )
 }

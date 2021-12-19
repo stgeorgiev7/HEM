@@ -8,6 +8,17 @@ import devicesData from "../data/devices.json"
 
 export default function Index() {
   return (
-    <SceneComposer devices={devicesData.devices} rooms={roomsData.rooms} />
+    <EditScene
+    rooms={roomsData?.rooms}
+    devices={devicesData?.devices}
+    selected={
+      {
+        "id": 1,
+        "name": "Lightbulb",
+        "iconUrl": "/images/plug.svg",
+        "roomId": 1,
+        "userId": 1
+      }
+    } />
   )
 }

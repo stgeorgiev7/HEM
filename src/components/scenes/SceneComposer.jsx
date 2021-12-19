@@ -3,56 +3,40 @@ import classNames from "classnames"
 import { Grid, Typography } from "@mui/material"
 import Scenes from "./Scenes"
 import { useMemo } from "react"
-import { useState } from "react"
 
-export default function SceneComposer({ devices, rooms, selected, onScene, checkSelect }) {
-    const [roomCards, setRoomCards] = useState();
+export default function SceneComposer({ devices, rooms, selected, onScene }) {
 
-    console.log(selected);
-
-    function handleClick(e) {
-        console.log(e.target);
-        checkSelect(e.target.id);
-    };
-
-    useMemo(() => {
-        const data = rooms.map(room => {
-
+    const roomCards = useMemo(() => {
+        return rooms.map(room => {
             return {
-                "id": room?.id,
-                "name": room?.name,
-                "cards": getCardsForRoom(room.id),
+                "id": room.id,
+                "name": room.name,
+                "cards": getDevicesCardsForCurrentRoom(room.id, devices),
             }
         })
 
-        setRoomCards(data)
+        function getDevicesCardsForCurrentRoom(roomId, devices) {
+            const devicesInRoom = devices.filter(device => device.roomId === roomId)
+            const cards = []
+            let id = 1;
+
+            devicesInRoom.forEach(dev => {
+                cards.push({
+                    "id": id++,
+                    "iconUrl": dev.iconUrl,
+                    "title": dev.name,
+                    "variant": "on",
+                })
+                cards.push({
+                    "id": id++,
+                    "iconUrl": dev.iconUrl,
+                    "title": dev.name,
+                    "variant": "off",
+                })
+            })
+            return cards;
+        }
     }, [devices, rooms])
-
-    function getCardsForRoom(roomId) {
-        const devicesInRoom = devices.filter(device => device.roomId === roomId)
-        const cards = []
-
-        devicesInRoom.forEach(dev => {
-            cards.push({
-                "iconUrl": dev.iconUrl,
-                "title": dev.name,
-                "variant": "on",
-                "outlined": selected?.id === dev?.id ? true : false
-
-            })
-            cards.push({
-                "iconUrl": dev.iconUrl,
-                "title": dev.name,
-                "variant": "off",
-                "outlined": selected?.id === dev?.id ? true : false
-
-            })
-        })
-        return cards;
-    }
-
-    console.log(roomCards);
-    console.log(selected)
 
     return (
         <Grid container>
@@ -60,7 +44,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene, check
                 return (
                     <Grid item xs={12} key={room.id}>
                         <Typography variant="h4">{room.name}</Typography>
-                        <Scenes cards={room.cards} onClick={handleClick} />
+                        <Scenes cards={room.cards} selected={selected} onClick={() => console.log("dsadsadas")}/>
                     </Grid>
                 )
             })}

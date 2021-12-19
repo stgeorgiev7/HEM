@@ -8,21 +8,6 @@ import devicesData from "../data/devices.json"
 
 export default function Index() {
   return (
-    <div>
-      <EditScene
-      open
-      handleClose={() => {alert('close')}} 
-      devices={devicesData?.devices}
-      rooms={roomsData?.rooms}
-      selected={
-        {
-          "name": "Living Room",
-          "type": "living-room",
-          "id": 4,
-          "propertyId": 1,
-          "userId": 1
-        }
-      }/>
-    </div>
+    <SceneComposer devices={devicesData.devices} rooms={roomsData.rooms} />
   );
 }

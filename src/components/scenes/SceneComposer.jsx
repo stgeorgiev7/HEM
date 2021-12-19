@@ -39,7 +39,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
             })
             return cards;
         }
-    })
+    }, [devices, rooms])
 
     return (
         <Grid container>

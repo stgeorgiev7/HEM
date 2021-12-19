@@ -26,18 +26,19 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
                     "iconUrl": dev.iconUrl,
                     "title": dev.name,
                     "variant": "on",
-                    "outline": dev.id === selected?.id ? true : false 
+                    "outline": roomId === selected?.id ? true : false 
                 })
                 cards.push({
                     "id": id++,
                     "iconUrl": dev.iconUrl,
                     "title": dev.name,
                     "variant": "off",
+                    "outline": roomId === selected?.id ? true : false 
                 })
             })
             return cards;
         }
-    }, [devices, rooms])
+    })
 
     return (
         <Grid container>

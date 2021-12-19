@@ -33,7 +33,6 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
                     "iconUrl": dev.iconUrl,
                     "title": dev.name,
                     "variant": "off",
-                    "outline": dev.id === selected?.id ? true : false 
                 })
             })
             return cards;

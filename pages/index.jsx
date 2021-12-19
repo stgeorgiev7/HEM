@@ -9,5 +9,5 @@ import devicesData from "../data/devices.json"
 export default function Index() {
   return (
     <SceneComposer devices={devicesData.devices} rooms={roomsData.rooms} />
-  );
+  )
 }

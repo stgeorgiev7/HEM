@@ -18,7 +18,7 @@ export default function EditScene({ open = true, handleClose, devices, rooms, on
                 title="EDIT SCENE"
                 buttonText="SAVE CHANGES">
                 <TextField placeholder="Back Home"></TextField>
-                <SceneComposer devices={devices} rooms={rooms} selected={selected} onScene={onScene} />
+                <SceneComposer devices={[...devices]} rooms={[...rooms]} selected={selected} onScene={onScene} />
             </Modal>
         </div>
     )

@@ -7,7 +7,7 @@ import { TextField } from "@mui/material";
 import roomsData from "../../../data/rooms.json";
 import devicesData from "../../../data/devices.json";
 
-export default function EditScene({ open = true, handleClose, devices, rooms, onScene = () => {console.log("brr brr brr")}, onSubmit, selected }) {
+export default function EditScene({ open = true, handleClose, devices, rooms, onScene, onSubmit, selected }) {
 
     return (
         <div>

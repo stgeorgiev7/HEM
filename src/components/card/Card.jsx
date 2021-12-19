@@ -11,7 +11,7 @@ export default function Card({ iconUrl, outlined = false, title, variant }) {
 
     return (
         <div className={classNames(styles["card"])}>
-            <CardContainer className={classNames(styles[variantMap[variant]])}
+            <CardContainer className={classNames(styles[variantMap[variant]])} onClick={()=> console.log("bla bal balsdadsaq")}
                 sx={outlined ? { border: "5px solid #7441F3", width: "100%" } : { border: 'none', width: "100%" }}>
                 {variant === "offline" && <Chip icon label="!" />}
                 {iconUrl && <img src={iconUrl} ></img>}

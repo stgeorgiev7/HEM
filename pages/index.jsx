@@ -9,16 +9,18 @@ import devicesData from "../data/devices.json"
 export default function Index() {
   return (
     <EditScene
-    rooms={roomsData?.rooms}
-    devices={devicesData?.devices}
-    selected={
-      {
-        "id": 1,
-        "name": "Lightbulb",
-        "iconUrl": "/images/plug.svg",
-        "roomId": 1,
-        "userId": 1
+      rooms={roomsData?.rooms}
+      devices={devicesData?.devices}
+      selected={
+        {
+          "id": 1,
+          "name": "Lightbulb",
+          "iconUrl": "/images/plug.svg",
+          "roomId": 1,
+          "userId": 1
+        }
       }
-    } />
+      onScene={() => { }}
+      onSubmit={() => { }} />
   )
 }

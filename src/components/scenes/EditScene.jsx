@@ -10,7 +10,7 @@ import devicesData from "../../../data/devices.json";
 export default function EditScene({ onSubmit, ...rest }) {
     // console.log(props)
     return (
-        <div>
+        <div className={classNames(styles.modal)}>
             <Modal
                 open={true}
                 onClose={() => { }}

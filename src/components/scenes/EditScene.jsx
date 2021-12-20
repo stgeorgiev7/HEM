@@ -13,8 +13,8 @@ export default function EditScene({ open = true, handleClose, devices, rooms, on
         <div>
             <Modal
                 open={open}
-                onClose={handleClose}
-                handleSubmit={onSubmit}
+                onClose={...handleClose}
+                handleSubmit={...onSubmit}
                 title="EDIT SCENE"
                 buttonText="SAVE CHANGES">
                 <TextField placeholder="Back Home"></TextField>

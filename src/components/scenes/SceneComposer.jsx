@@ -2,43 +2,41 @@ import styles from "./SceneComposer.module.scss"
 import classNames from "classnames"
 import { Grid, Typography } from "@mui/material"
 import Scenes from "./Scenes"
-import { useMemo } from "react"
+import { useMemo, useEffect } from "react"
 
 export default function SceneComposer({ devices, rooms, selected, onScene }) {
 
     const roomCards = useMemo(() => {
-        return rooms.map(room => {
+        let id = 1;
+        const roomCards = rooms.map(room => {
+            const cardsForCurrentRoom = devices.filter(device => device.roomId === room.id)
+
+            const cards = []
+            cardsForCurrentRoom.forEach(device => {
+                cards.push(
+                    {
+                        "id": id++,
+                        "iconUrl": device.iconUrl,
+                        "title": device.name,
+                        "variant": "on"
+                    },
+                    {
+                        "id": id++,
+                        "iconUrl": device.iconUrl,
+                        "title": device.name,
+                        "variant": "off"
+                    },
+                )
+            })
+
             return {
                 "id": room.id,
                 "name": room.name,
-                "cards": getDevicesCardsForCurrentRoom(room.id, devices),
+                "cards": cards
             }
         })
 
-        function getDevicesCardsForCurrentRoom(roomId, devices) {
-            const devicesInRoom = devices.filter(device => device.roomId === roomId)
-            const cards = []
-            let id = 1;
-
-            devicesInRoom.forEach(dev => {
-                cards.push({
-                    "id": id++,
-                    "iconUrl": dev.iconUrl,
-                    "title": dev.name,
-                    "variant": "on",
-                    "outline": dev.id === selected?.id ? true : false 
-                })
-                cards.push({
-                    "id": id++,
-                    "iconUrl": dev.iconUrl,
-                    "title": dev.name,
-                    "variant": "off",
-                    "outline": dev.id === selected?.id ? true : false 
-
-                })
-            })
-            return cards;
-        }
+        return roomCards
     }, [devices, rooms])
 
     return (
@@ -47,7 +45,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
                 return (
                     <Grid item xs={12} key={room.id}>
                         <Typography variant="h4">{room.name}</Typography>
-                        <Scenes cards={room.cards} selected={selected} onClick={() => console.log("dsadsadas")}/>
+                        <Scenes cards={room.cards} selected={selected} />
                     </Grid>
                 )
             })}

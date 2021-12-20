@@ -10,7 +10,7 @@ import devicesData from "../../../data/devices.json";
 export default function EditScene({ open = true, handleClose, devices, rooms, onScene, onSubmit, selected }) {
 
     return (
-        <div>
+        <div className={classNames(styles.modal)}>
             <Modal
                 open={open}
                 onClose={handleClose}

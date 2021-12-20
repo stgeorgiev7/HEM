@@ -7,18 +7,17 @@ import { TextField } from "@mui/material";
 import roomsData from "../../../data/rooms.json";
 import devicesData from "../../../data/devices.json";
 
-export default function EditScene({ onSubmit, ...rest }) {
-    // console.log(props)
+export default function EditScene({open = true, handleClose, devices, rooms, onScene, onSubmit, selected}) {
     return (
         <div>
             <Modal
-                open={true}
-                onClose={() => { }}
+                open={open}
+                onClose={handleClose}
                 handleSubmit={onSubmit}
                 title="EDIT SCENE"
                 buttonText="SAVE CHANGES">
                 <TextField placeholder="Back Home"></TextField>
-                <SceneComposer {...rest} />
+                <SceneComposer devices={devices} rooms={rooms} selected={selected} onScene={onScene} />
             </Modal>
         </div>
     )

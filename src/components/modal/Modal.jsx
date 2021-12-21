@@ -16,7 +16,7 @@ export default function Modal({ open, title, buttonText, handleSubmit, handleClo
             <Dialog open={open} onClose={handleClose} className={classNames(styles["modal-container"])}>
                 <DialogTitle className={classNames(styles.title)}>{title}</DialogTitle>
                 <DialogContent className={classNames(styles.content)}>
-                    {children.map((element) => element)}
+                    {children}
                 </DialogContent>
                 <Button onClick={handleSubmit}>{buttonText}</Button>
             </Dialog>

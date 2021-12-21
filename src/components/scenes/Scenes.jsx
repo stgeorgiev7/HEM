@@ -14,7 +14,7 @@ export default function Scenes({ cards = [], selected }) {
                                 iconUrl={card.iconUrl}
                                 variant={card.variant}
                                 title={card.title}
-                                outlined={cards.id === selected?.id ? true : false} />
+                                outlined={card.id === selected?.id} />
                         </Grid>
                     );
                 })}

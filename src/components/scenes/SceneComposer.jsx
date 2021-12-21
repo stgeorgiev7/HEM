@@ -7,37 +7,30 @@ import { useMemo, useEffect } from "react"
 export default function SceneComposer({ devices, rooms, selected, onScene }) {
 
     const roomCards = useMemo(() => {
+        let id = 1;
 
         const roomDiveces = rooms.map(room => {
-            // const cards = [];
-
-            let id = 0;
-
-            console.log(room);
+            const cards = [];
             const cardsForCurrentRoom = devices.filter(device => device?.roomId === room?.id);
-            console.log(cardsForCurrentRoom);
-            const cards = [...cardsForCurrentRoom];
+       
+            // const cards = [...cardsForCurrentRoom];
 
-            // cardsForCurrentRoom.forEach(device => {
-            //     cards.push(
-            //         {
-            //             "id": id++,
-            //             "iconUrl": device.iconUrl,
-            //             "title": device.name,
-            //             "variant": "on"
-            //         },
-            //         {
-            //             "id": id++,
-            //             "iconUrl": device.iconUrl,
-            //             "title": device.name,
-            //             "variant": "off"
-            //         },
-            //     )
-            // })
-
-
-
-            console.log(cards)
+            cardsForCurrentRoom.forEach(device => {
+                cards.push(
+                    {
+                        "id": id++,
+                        "iconUrl": device.iconUrl,
+                        "title": device.name,
+                        "variant": "on"
+                    },
+                    {
+                        "id": id++,
+                        "iconUrl": device.iconUrl,
+                        "title": device.name,
+                        "variant": "off"
+                    },
+                )
+            })
 
             return {
                 "id": room.id,

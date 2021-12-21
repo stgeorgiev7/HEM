@@ -7,8 +7,8 @@ export default function AddRoom({ open, title, buttonText, handleSubmit, handleC
     return (
         <Modal
             open={open} // set this to "true" for testing
-            title={title}
-            buttonText={buttonText}
+            title={"Add Room"}
+            buttonText={"Add New Room"}
             handleClose={handleClose}
             handleSubmit={handleSubmit}>
             <TextField hiddenLabel label="Add room" variant="outlined" sx={{ marginY: "2rem" }} />

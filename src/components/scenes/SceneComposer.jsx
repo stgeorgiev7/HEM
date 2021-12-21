@@ -7,37 +7,51 @@ import { useMemo, useEffect } from "react"
 export default function SceneComposer({ devices, rooms, selected, onScene }) {
 
     const roomCards = useMemo(() => {
-        let id = 1;
-        const roomCards = rooms.map(room => {
-            const cardsForCurrentRoom = devices.filter(device => device.roomId === room.id)
 
-            const cards = []
-            cardsForCurrentRoom.forEach(device => {
-                cards.push(
-                    {
-                        "id": id++,
-                        "iconUrl": device.iconUrl,
-                        "title": device.name,
-                        "variant": "on"
-                    },
-                    {
-                        "id": id++,
-                        "iconUrl": device.iconUrl,
-                        "title": device.name,
-                        "variant": "off"
-                    },
-                )
-            })
+        const roomDiveces = rooms.map(room => {
+            // const cards = [];
+
+            let id = 0;
+
+            console.log(room);
+            const cardsForCurrentRoom = devices.filter(device => device?.roomId === room?.id);
+            console.log(cardsForCurrentRoom);
+            const cards = [...cardsForCurrentRoom];
+
+            // cardsForCurrentRoom.forEach(device => {
+            //     cards.push(
+            //         {
+            //             "id": id++,
+            //             "iconUrl": device.iconUrl,
+            //             "title": device.name,
+            //             "variant": "on"
+            //         },
+            //         {
+            //             "id": id++,
+            //             "iconUrl": device.iconUrl,
+            //             "title": device.name,
+            //             "variant": "off"
+            //         },
+            //     )
+            // })
+
+
+
+            console.log(cards)
 
             return {
                 "id": room.id,
                 "name": room.name,
                 "cards": cards
             }
-        })
+        });
+       
 
-        return roomCards
+        return roomDiveces
     }, [devices, rooms])
+
+    console.log(roomCards);
+
 
     return (
         <Grid container>

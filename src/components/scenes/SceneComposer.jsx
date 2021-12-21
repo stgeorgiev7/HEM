@@ -59,7 +59,7 @@ export default function SceneComposer({ devices, rooms, selected, onScene }) {
                 return (
                     <Grid item xs={12} key={room.id}>
                         <Typography variant="h4">{room.name}</Typography>
-                        <Scenes cards={room.cards} selected={selected} />
+                        <Scenes cards={room} selected={selected} />
                     </Grid>
                 )
             })}

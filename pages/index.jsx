@@ -62,6 +62,13 @@ export default function Index() {
         "propertyId": 1,
         "userId": 1
       }
-    ]}/>   
+    ]}
+    selected={{
+      "id": 1,
+      "name": "Lightbulb",
+      "iconUrl": "/images/plug.svg",
+      "roomId": 1,
+      "userId": 1
+    }}/>   
   )
 }

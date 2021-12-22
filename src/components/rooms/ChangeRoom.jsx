@@ -22,7 +22,7 @@ export default function ChangeRoom({ open, handleClose, rooms = [], onSubmit, se
                             <Card
                                 iconUrl={"images/bed.svg"}
                                 title={crrRoom?.name}
-                                outlined={crrRoom?.id === selected?.id}
+                                variant={crrRoom?.id === selected?.id ? "off" : "on"}
                             />
                         </Grid>
                     )

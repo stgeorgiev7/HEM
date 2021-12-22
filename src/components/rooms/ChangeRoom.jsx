@@ -4,7 +4,7 @@ import { Grid } from "@mui/material";
 import Modal from "../modal/Modal";
 import Card from "../card/Card";
 
-export default function ChangeRoom({ open, handleClose, rooms = [], onSubmit }) {
+export default function ChangeRoom({ open, handleClose, rooms = [], onSubmit, selected }) {
 
     return (
         <Modal
@@ -22,7 +22,7 @@ export default function ChangeRoom({ open, handleClose, rooms = [], onSubmit }) 
                             <Card
                                 iconUrl={"images/bed.svg"}
                                 title={crrRoom?.name}
-                                variant="offline"
+                                outlined={crrRoom?.id === selected?.id}
                             />
                         </Grid>
                     )

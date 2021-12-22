@@ -1,12 +1,12 @@
-import styles from "./Login.module.scss";
+import styles from "./Register.module.scss";
 import classNames from "classnames";
 import { Button, InputAdornment, Paper, TextField } from "@mui/material";
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 
-export default function Login() {
+export default function Register() {
     return (
-        <div className={classNames(styles['login-form'])}>
+        <div className={classNames(styles['register-form'])}>
             <Paper className={classNames(styles.paper)}>
                 <TextField InputProps={{
                     startAdornment: (
@@ -21,7 +21,7 @@ export default function Login() {
 
                 <TextField InputProps={{
                     startAdornment: (
-                        <InputAdornment position="start">
+                        <InputAdornment position="start" >
                             <LockIcon className={classNames(styles["icon"])} />
                         </InputAdornment>
                     )
@@ -29,7 +29,18 @@ export default function Login() {
                     required
                     placeholder="Password"
                     variant="outlined" />
-                <Button variant="contained" > Login</Button>
+
+                <TextField InputProps={{
+                    startAdornment: (
+                        <InputAdornment position="start" label="qsa">
+                            <LockIcon className={classNames(styles["icon"])} />
+                        </InputAdornment>
+                    )
+                }}
+                    required
+                    placeholder="Retype Password"
+                    variant="outlined" />
+                <Button variant="contained" >Register</Button>
             </Paper>
         </div>
     )

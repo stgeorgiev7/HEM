@@ -9,7 +9,8 @@ export default function ChangeRoom({ open, handleClose, rooms = [], onSubmit, se
     const buttonProps = {
         title: "CHANGE ROOM",
         buttonText: "SAVE CHANGES",
-        color: "secondary"
+        color: "secondary",
+        variant: "contained"
     }
 
     return (

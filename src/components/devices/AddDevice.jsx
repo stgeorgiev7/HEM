@@ -18,7 +18,7 @@ export default function AddDevice({ open, handleClose, handleSubmmit, searching 
             title={"ADD DEVICE"}
             buttonProps={buttonProps}>
             <Box sx={{ position: 'relative', display: 'flex', flexDirection: "column", textAlign: "center", overflow: "hidden" }} >
-                <CircularProgress size={"24.6rem"} sx={{ opacity: "0.3" }} variant={failed ? "determined" : "indetermined"} value={0} />
+                <CircularProgress size={"24.6rem"} sx={{ opacity: "0.3" }} variant={failed ? "determined" : searching ? "indetermined" : ""} value={0} />
                 <CircularProgress size={"24.6rem"} sx={{ opacity: "0.15", position: "absolute", color: searching ? "" : "rgba(232, 233, 234)" }} value={100} variant="determinate" />
                 <Box
                     sx={{
@@ -35,7 +35,7 @@ export default function AddDevice({ open, handleClose, handleSubmmit, searching 
                     <img src={searching ? "images/search.svg" : "images/no-connection.svg"} ></img>
                 </Box>
             </Box>
-            <Typography sx={{ color: "#7441F3", fontWeight: "700", textAlign: "center", fontWeight: "700", marginTop: "45px" }}>{searching ? "Searching..." : found ? "" : "NO DEVICE FOUND..."}</Typography>
+            <Typography sx={{ color: "#7441F3", fontWeight: "700", textAlign: "center", fontWeight: "700", marginTop: "45px" }}>{searching ? "Searching..." : failed ? "NO DEVICE FOUND..." : ""}</Typography>
         </Modal>
     )
 }

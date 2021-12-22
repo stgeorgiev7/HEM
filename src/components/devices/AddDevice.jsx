@@ -3,7 +3,7 @@ import classNames from "classnames"
 import Modal from "../modal/Modal"
 import { CircularProgress, Box, Typography } from '@mui/material/';
 
-export default function AddDevice({ searching = true, found = false, failed, onDevice }) {
+export default function AddDevice({ open, handleClose, handleSubmmit, searching = true, found = false, failed, onDevice }) {
     const buttonProps = {
         buttonText: "TRY AGAIN",
         color: "primary",
@@ -12,11 +12,13 @@ export default function AddDevice({ searching = true, found = false, failed, onD
 
     return (
         <Modal
-            open={true}
+            open={open}
+            handleClose={handleClose}
+            handleSubmit={handleSubmmit}
             title={"ADD DEVICE"}
             buttonProps={buttonProps}>
             <Box sx={{ position: 'relative', display: 'flex', flexDirection: "column", textAlign: "center", overflow: "hidden" }} >
-                <CircularProgress size={"24.6rem"} sx={{ opacity: "0.3" }} variant={searching ? "indeterminate" : "determined"} value={0} />
+                <CircularProgress size={"24.6rem"} sx={{ opacity: "0.3" }} variant={failed ? "determined" : "indetermined"} value={0} />
                 <CircularProgress size={"24.6rem"} sx={{ opacity: "0.15", position: "absolute", color: searching ? "" : "rgba(232, 233, 234)" }} value={100} variant="determinate" />
                 <Box
                     sx={{

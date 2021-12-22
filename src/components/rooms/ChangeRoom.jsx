@@ -6,16 +6,22 @@ import Card from "../card/Card";
 
 export default function ChangeRoom({ open, handleClose, rooms = [], onSubmit, selected }) {
 
+    const buttonProps = {
+        title: "CHANGE ROOM",
+        buttonText: "SAVE CHANGES",
+        color: "secondary"
+    }
+
     return (
         <Modal
             open={open}
             title="CHANGE ROOM"
-            buttonText="SAVE CHANGES"
-            handleClose={handleClose}
-            onSubmit={onSubmit}>
+            buttonProps={buttonProps}
+            onSubmit={onSubmit}
+            handleClose={handleClose}>
             <Grid container
-             spacing={3}
-             justifyContent="center">
+                spacing={3}
+                justifyContent="center">
                 {rooms?.map((crrRoom, index) => {
                     return (
                         <Grid item key={index}>

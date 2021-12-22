@@ -21,6 +21,7 @@ export default function Modal({ open, handleSubmit, handleClose, children, butto
                 <Button
                  onClick={handleSubmit}
                  color={buttonProps?.color}
+                 variant={buttonProps?.variant}
                  >{buttonProps?.buttonText}
                  </Button>
             </Dialog>

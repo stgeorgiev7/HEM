@@ -7,10 +7,9 @@ import Card from "../card/Card";
 export default function ChangeRoom({ open, handleClose, rooms = [], onSubmit, selected }) {
 
     const buttonProps = {
-        title: "CHANGE ROOM",
         buttonText: "SAVE CHANGES",
         color: "secondary",
-        variant: "contained"
+        variant: "outlined"
     }
 
     return (

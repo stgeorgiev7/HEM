@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, Button } from "@mui/material";
 import classNames from "classnames";
 
-export default function Modal({ open, title, buttonText, handleSubmit, handleClose, children }) {
+export default function Modal({ open, title, buttonText, handleSubmit, handleClose, children, buttonProps }) {
     const [openDialog, setOpenDialog] = useState(open);
 
     handleClose = () => {

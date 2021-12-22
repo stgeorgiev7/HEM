@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, Button } from "@mui/material";
 import classNames from "classnames";
 
-export default function Modal({ open, handleSubmit, handleClose, children, buttonProps }) {
+export default function Modal({ open, handleSubmit, handleClose, children, title, buttonProps }) {
     const [openDialog, setOpenDialog] = useState(open);
 
     handleClose = () => {
@@ -14,7 +14,7 @@ export default function Modal({ open, handleSubmit, handleClose, children, butto
     return (
         <div >
             <Dialog open={open} onClose={handleClose} className={classNames(styles["modal-container"])}>
-                <DialogTitle className={classNames(styles.title)}>{buttonProps?.title}</DialogTitle>
+                <DialogTitle className={classNames(styles.title)}>{title}</DialogTitle>
                 <DialogContent className={classNames(styles.content)}>
                     {children}
                 </DialogContent>

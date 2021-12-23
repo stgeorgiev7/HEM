@@ -22,7 +22,6 @@ export default function Modal({ open, title, handleSubmit, handleClose, children
                     variant="contained"
                     onClick={handleSubmit}
                     color={buttonProps?.color}
-                    display="none"
                     sx={{ marginBottom: "37px", maxWidth: "33%", alignSelf: "center", display: buttonProps.display }} // this maxWidth is not correct !!!
                 >
                     {buttonProps?.buttonText}

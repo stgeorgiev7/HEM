@@ -35,9 +35,8 @@ export default function AddDevice({ open, handleClose, handleSubmmit, searching,
                     <img src={searching ? "images/search.svg" : "images/no-connection.svg"} ></img>
                 </Box>
             </Box>
-            <Typography sx={{ color: "#7441F3", fontWeight: "700", textAlign: "center", fontWeight: "700", marginTop: "45px" }}>{failed ? "NO DEVICE FOUND..." : ""}</Typography>
+            <Typography sx={{ color: "#7441F3", fontWeight: "700", textAlign: "center", fontWeight: "700", marginTop: "45px" }}>{failed ? "NO DEVICE FOUND..." : "SEARCHING..."}</Typography>
         </Modal>
     )
 }
 
-//variant="determinate" value={100} 

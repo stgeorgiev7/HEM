@@ -16,6 +16,7 @@ export default function Register() {
                     )
                 }}
                     required
+                    type="email"
                     placeholder="Email"
                     variant="outlined" />
 
@@ -27,6 +28,7 @@ export default function Register() {
                     )
                 }}
                     required
+                    type="password"
                     placeholder="Password"
                     variant="outlined" />
 
@@ -38,6 +40,7 @@ export default function Register() {
                     )
                 }}
                     required
+                    type="password"
                     placeholder="Retype Password"
                     variant="outlined" />
                 <Button variant="contained" >Register</Button>

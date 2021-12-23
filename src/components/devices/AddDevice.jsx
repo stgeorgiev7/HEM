@@ -3,7 +3,7 @@ import classNames from "classnames"
 import Modal from "../modal/Modal"
 import { CircularProgress, Box, Typography } from '@mui/material/';
 
-export default function AddDevice({ open, handleClose, handleSubmmit, searchin, found, failed, onDevice }) {
+export default function AddDevice({ open, handleClose, handleSubmmit, searching, found, failed, onDevice }) {
     const buttonProps = {
         buttonText: "TRY AGAIN",
         color: "primary",

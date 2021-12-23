@@ -3,7 +3,7 @@ import classNames from "classnames"
 import Modal from "../modal/Modal"
 import { CircularProgress, Box, Typography } from '@mui/material/';
 
-export default function AddDevice({ open, handleClose, handleSubmmit, searching, found, failed, onDevice }) {
+export default function AddDevice({ open = true, handleClose, handleSubmmit, searching = true, found, failed, onDevice }) {
     const buttonProps = {
         buttonText: "TRY AGAIN",
         color: "primary",
@@ -19,7 +19,7 @@ export default function AddDevice({ open, handleClose, handleSubmmit, searching,
             buttonProps={buttonProps}>
             <Box sx={{ position: 'relative', display: 'flex', flexDirection: "column", textAlign: "center", overflow: "hidden" }} >
                 <CircularProgress size={"24.6rem"} sx={{ opacity: "0.3" }} variant={failed ? "determinate" : searching ? "indeterminate" : ""} value={0} />
-                <CircularProgress size={"24.6rem"} sx={{ opacity: "0.15", position: "absolute", color: searching ? "" : "rgba(232, 233, 234)" }} value={100} variant="determinate" />
+                <CircularProgress size={"24.6rem"} sx={{ opacity: "0.15", position: "absolute", color: failed ? "rgba(24, 28, 36, 1)" : "" }} value={100} variant="determinate" />
                 <Box
                     sx={{
                         top: 0,
@@ -32,11 +32,11 @@ export default function AddDevice({ open, handleClose, handleSubmmit, searching,
                         justifyContent: 'center',
                     }}
                 >
-                    <img src={searching ? "images/search.svg" : "images/no-connection.svg"} ></img>
+                    <img src={failed ? "images/no-connection.svg" : "images/search.svg"} ></img>
                 </Box>
             </Box>
             <Typography sx={{ color: "#7441F3", fontWeight: "700", textAlign: "center", fontWeight: "700", marginTop: "45px" }}>{failed ? "No Device Found" : "SEARCHING..."}</Typography>
-        </Modal>
+        </Modal >
     )
 }
 

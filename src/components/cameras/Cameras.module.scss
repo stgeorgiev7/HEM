@@ -1,46 +1,46 @@
-.cameras-container{
+.cameras-container {
     margin: 37px !important;
 }
 
-.video-item{
+.video-item {
     width: 97px;
     height: 90px;
     border-radius: 20px;
     object-fit: fill;
 }
 
-.video-player{
+.video-player {
     width: 478px;
     height: 315px;
     border-radius: 20px;
     object-fit: fill;
 }
 
-.container{
+.container {
     display: flex;
     width: 805px;
     height: 390px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 20px;
 }
 
-.items{
+.items {
     justify-content: flex-end;
     gap: 15px;
 }
 
-.btn{
+.btn {
     position: absolute;
     top: 259px;
     width: 210px;
     height: 90px;
 }
 
-.scrolable{
+.scrolable {
     max-height: 205px;
     overflow: auto;
 }
 
-.selected{
+.selected {
     border: 5px solid rgba(116, 65, 243, 1);
 }

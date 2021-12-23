@@ -1,49 +1,49 @@
-.user{
+.user {
     display: flex !important;
     align-items: center;
     padding: 30px 18px;
 }
 
-.list-item{
+.list-item {
     padding-left: 20px !important;
 }
 
 .building-list-item {
     height: 69px;
-    background-color: #7441F312 !important;
+    background-color: #7441f312 !important;
 }
 
-.badge{
+.badge {
     justify-content: center;
     width: 25px;
     height: 25px;
     border-radius: 7px;
 }
 
-.building-badge{
-    background-color: #E150A6;
+.building-badge {
+    background-color: #e150a6;
     color: white;
 }
 
-.room-badge{
-    background-color: #EB675C;
+.room-badge {
+    background-color: #eb675c;
     color: white;
 }
 
 .menu-ul {
-    ul{
+    ul {
         padding: 0;
     }
 }
 
-.menu-item{
+.menu-item {
     width: 140px;
     padding: 14px 20px;
 }
 
-.drawer{
+.drawer {
     min-width: 240px !important;
-    div{
+    div {
         border-right: 0px;
     }
 }

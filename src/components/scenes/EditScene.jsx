@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import styles from "./EditScene.module.scss";
 import classNames from "classnames";
 import SceneComposer from "./SceneComposer";
@@ -7,7 +7,15 @@ import { TextField } from "@mui/material";
 import roomsData from "../../../data/rooms.json";
 import devicesData from "../../../data/devices.json";
 
-export default function EditScene({open = true, handleClose, devices, rooms, onScene, onSubmit, selected}) {
+export default function EditScene({
+    open = true,
+    handleClose,
+    devices,
+    rooms,
+    onScene,
+    onSubmit,
+    selected,
+}) {
     return (
         <div className={classNames(styles.modal)}>
             <Modal
@@ -17,8 +25,13 @@ export default function EditScene({open = true, handleClose, devices, rooms, onS
                 title="EDIT SCENE"
                 buttonText="SAVE CHANGES">
                 <TextField placeholder="Back Home"></TextField>
-                <SceneComposer devices={devices} rooms={rooms} selected={selected} onScene={onScene} />
+                <SceneComposer
+                    devices={devices}
+                    rooms={rooms}
+                    selected={selected}
+                    onScene={onScene}
+                />
             </Modal>
         </div>
-    )
+    );
 }

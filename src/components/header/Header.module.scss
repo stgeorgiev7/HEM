@@ -1,18 +1,17 @@
 .header-wrapper {
     width: 100%;
 
-    div[class^='MuiPaper-root'] {
+    div[class^="MuiPaper-root"] {
         min-height: 6rem;
     }
 }
 
-
 .hello {
-    color: #7441F3;
+    color: #7441f3;
 }
 
 .right {
-    display:flex;
+    display: flex;
 }
 
 .left {

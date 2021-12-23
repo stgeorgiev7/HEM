@@ -6,19 +6,24 @@ import { Grid } from "@mui/material";
 export default function Scenes({ cards = [], selected }) {
     return (
         <div className={classNames(styles["scenes-container"])}>
-            <Grid container >
+            <Grid container>
                 {cards?.cards.map((card, index) => {
                     return (
-                        <Grid item xs={4} className={classNames(styles["card"])} key={index}>
+                        <Grid
+                            item
+                            xs={4}
+                            className={classNames(styles["card"])}
+                            key={index}>
                             <Card
                                 iconUrl={card.iconUrl}
                                 variant={card.variant}
                                 title={card.title}
-                                outlined={card.id === selected?.id} />
+                                outlined={card.id === selected?.id}
+                            />
                         </Grid>
                     );
                 })}
             </Grid>
         </div>
-    )
-} 
+    );
+}

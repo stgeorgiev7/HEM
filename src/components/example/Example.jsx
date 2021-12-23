@@ -4,7 +4,7 @@ import Link from "../link/Link";
 import styles from "./Example.module.scss";
 import classNames from "classnames";
 import Header from "../header/Header";
-import User from "../user/User"
+import User from "../user/User";
 import Weather from "../weather/Weather";
 import Time from "../time/Time";
 import Thermostat from "../thermostat/Thermostat";
@@ -12,10 +12,5 @@ import Card from "../card/Card";
 import Scenes from "../scenes/Scenes";
 
 export default function Copyright() {
-
-  return (
-    <div className={classNames(styles.wrapper)}>
-       
-    </div>
-  );
+    return <div className={classNames(styles.wrapper)}></div>;
 }

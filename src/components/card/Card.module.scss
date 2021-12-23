@@ -4,12 +4,12 @@
     height: 12rem;
     width: 13rem;
     position: relative;
-    div[class^='MuiPaper-root'] {
+    div[class^="MuiPaper-root"] {
         background-color: rgba(116, 65, 243, 0.2);
         flex-direction: column;
     }
 
-    div[class^='MuiChip-root'] {
+    div[class^="MuiChip-root"] {
         height: 25px;
         background-color: rgba(235, 103, 92, 1);
         color: white;
@@ -19,8 +19,8 @@
         top: 12px;
         right: 20px;
     }
-    
-    div{
+
+    div {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,7 +31,7 @@
 .device-off {
     background-color: rgba(116, 65, 243, 1) !important;
 
-    img{
+    img {
         filter: brightness(0) invert(1);
     }
     p {
@@ -42,11 +42,12 @@
 .device-offline {
     background-color: rgba(235, 103, 92, 0.35) !important;
 
-    img{
-        filter: invert(50%) sepia(57%) saturate(691%) hue-rotate(315deg) brightness(96%) contrast(91%);
+    img {
+        filter: invert(50%) sepia(57%) saturate(691%) hue-rotate(315deg)
+            brightness(96%) contrast(91%);
     }
     p {
-        color: #EB675C
+        color: #eb675c;
     }
 }
 
@@ -56,7 +57,7 @@
     object-fit: fill;
 }
 
-.text{
+.text {
     text-align: center;
     font-weight: bold !important;
     color: rgba(116, 65, 243, 1);

@@ -6,14 +6,13 @@ import { AddCircleOutlined, RemoveCircleOutlined } from "@mui/icons-material";
 import { ComposedChart, Line } from "recharts";
 
 export default function Thermostat({ data }) {
-
     const [temperature, setTemperature] = useState(25);
 
     function increaseTemperature() {
         if (temperature < 50 && temperature >= 12) {
             setTemperature(temperature + 1);
         }
-    };
+    }
 
     function decreaseTemperature() {
         if (temperature > 12 && temperature <= 50) {
@@ -47,29 +46,27 @@ export default function Thermostat({ data }) {
                     <RemoveCircleOutlined />
                 </Button>
 
-                <Typography className={classNames(styles["temperature"])}>{temperature}&deg;</Typography>
+                <Typography className={classNames(styles["temperature"])}>
+                    {temperature}&deg;
+                </Typography>
 
                 <Button
                     variant="text"
                     onClick={increaseTemperature}
-                    className={classNames(styles["plusBtn"])} >
+                    className={classNames(styles["plusBtn"])}>
                     <AddCircleOutlined size="large" />
                 </Button>
-
-
             </div>
 
             <div className={classNames(styles["linear-graphic"])}>
-                <ComposedChart
-                    width={500}
-                    height={100}
-                    data={data}
-                >
-                    <Line type="monotone" dataKey={"temperature"} stroke="#ffff" />
+                <ComposedChart width={500} height={100} data={data}>
+                    <Line
+                        type="monotone"
+                        dataKey={"temperature"}
+                        stroke="#ffff"
+                    />
                 </ComposedChart>
             </div>
-
-
         </div>
-    )
+    );
 }

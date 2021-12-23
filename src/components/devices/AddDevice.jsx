@@ -23,8 +23,7 @@ export default function AddDevice({
             handleClose={handleClose}
             handleSubmit={handleSubmmit}
             title={"ADD DEVICE"}
-            buttonProps={buttonProps}
-        >
+            buttonProps={buttonProps}>
             <Box
                 sx={{
                     position: "relative",
@@ -32,8 +31,7 @@ export default function AddDevice({
                     flexDirection: "column",
                     textAlign: "center",
                     overflow: "hidden",
-                }}
-            >
+                }}>
                 <CircularProgress
                     size={"24.6rem"}
                     sx={{ opacity: "0.3" }}
@@ -66,15 +64,13 @@ export default function AddDevice({
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                    }}
-                >
+                    }}>
                     <img
                         src={
                             failed
                                 ? "images/no-connection.svg"
                                 : "images/search.svg"
-                        }
-                    ></img>
+                        }></img>
                 </Box>
             </Box>
             <Typography
@@ -84,8 +80,7 @@ export default function AddDevice({
                     textAlign: "center",
                     fontWeight: "700",
                     marginTop: "45px",
-                }}
-            >
+                }}>
                 {failed ? "NO DEVICE FOUND..." : "SEARCHING..."}
             </Typography>
         </Modal>

@@ -14,18 +14,25 @@ export default function Rooms({ rooms }) {
                     <Card iconUrl={"images/shower.svg"} title="add room"></Card>
                 </Grid>
                 <Grid item>
-                    <Card iconUrl={"images/tea-cup.svg"} title="add room"></Card>
+                    <Card
+                        iconUrl={"images/tea-cup.svg"}
+                        title="add room"></Card>
                 </Grid>
                 <Grid item>
-                    <Card iconUrl={"images/morning.svg"} title="add room"></Card>
+                    <Card
+                        iconUrl={"images/morning.svg"}
+                        title="add room"></Card>
                 </Grid>
                 <Grid item>
                     <Card iconUrl={"images/morning.svg"} title=""></Card>
                 </Grid>
                 <Grid item>
-                    <Card iconUrl={"images/plus.svg"} outlined title="add room"></Card>
+                    <Card
+                        iconUrl={"images/plus.svg"}
+                        outlined
+                        title="add room"></Card>
                 </Grid>
             </Grid>
         </div>
-    )
+    );
 }

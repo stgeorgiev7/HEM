@@ -7,25 +7,25 @@
     max-width: 100% !important;
 }
 
-.grid-wrapper{
+.grid-wrapper {
     position: relative;
     top: 100px;
     padding: 0 100px;
 }
 
 .paper {
-  background-color: colors.$primary_main !important;
-  position: absolute;
-  z-index: -1;
-  border-radius: 0 !important;
-  width: 100vw;
-  height: 20vh;
+    background-color: colors.$primary_main !important;
+    position: absolute;
+    z-index: -1;
+    border-radius: 0 !important;
+    width: 100vw;
+    height: 20vh;
 }
 
-.header-container{
+.header-container {
     margin-bottom: 100px !important;
 }
 
-.title{
+.title {
     margin-bottom: 1rem !important;
 }

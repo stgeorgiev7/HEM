@@ -4,7 +4,14 @@ import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, Button } from "@mui/material";
 import classNames from "classnames";
 
-export default function Modal({ open, title, handleSubmit, handleClose, children, buttonProps }) {
+export default function Modal({
+    open,
+    title,
+    handleSubmit,
+    handleClose,
+    children,
+    buttonProps,
+}) {
     const [openDialog, setOpenDialog] = useState(open);
 
     handleClose = () => {
@@ -12,24 +19,34 @@ export default function Modal({ open, title, handleSubmit, handleClose, children
     };
 
     return (
-        <div >
-            <Dialog open={open} onClose={handleClose} className={classNames(styles["modal-container"])}>
-                <DialogTitle className={classNames(styles["title"])}>{title}</DialogTitle>
+        <div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                className={classNames(styles["modal-container"])}>
+                <DialogTitle className={classNames(styles["title"])}>
+                    {title}
+                </DialogTitle>
                 <DialogContent className={classNames(styles["content"])}>
                     {children}
                 </DialogContent>
                 <Button
-                 onClick={handleSubmit}
+                    onClick={handleSubmit}
                     variant="contained"
                     onClick={handleSubmit}
                     color={buttonProps?.color}
-                    sx={{ marginBottom: "37px", maxWidth: "33%", alignSelf: "center", display: buttonProps.display }} // this maxWidth is not correct !!!
+                    sx={{
+                        marginBottom: "37px",
+                        maxWidth: "33%",
+                        alignSelf: "center",
+                        ...buttonProps,
+                    }} // this maxWidth is not correct !!!
                 >
                     {buttonProps?.buttonText}
                 </Button>
             </Dialog>
         </div>
-    )
+    );
 }
 
-//remove inline css 
+//remove inline css

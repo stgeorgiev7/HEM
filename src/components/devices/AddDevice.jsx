@@ -3,11 +3,11 @@ import classNames from "classnames"
 import Modal from "../modal/Modal"
 import { CircularProgress, Box, Typography } from '@mui/material/';
 
-export default function AddDevice({ open = true, handleClose, handleSubmmit, searching = true, found, failed, onDevice }) {
+export default function AddDevice({ open = true, handleClose, handleSubmmit, searching = true, found, failed , onDevice }) {
     const buttonProps = {
         buttonText: "TRY AGAIN",
         color: "primary",
-        display: searching ? "none" : "inline-block"
+        display: failed ? "inline-block" : "none" 
     }
 
     return (
@@ -35,7 +35,7 @@ export default function AddDevice({ open = true, handleClose, handleSubmmit, sea
                     <img src={failed ? "images/no-connection.svg" : "images/search.svg"} ></img>
                 </Box>
             </Box>
-            <Typography sx={{ color: "#7441F3", fontWeight: "700", textAlign: "center", fontWeight: "700", marginTop: "45px" }}>{failed ? "No Device Found" : "SEARCHING..."}</Typography>
+            <Typography sx={{ color: "#7441F3", fontWeight: "700", textAlign: "center", fontWeight: "700", marginTop: "45px" }}>{failed ? "NO DEVICE FOUND..." : "SEARCHING..."}</Typography>
         </Modal >
     )
 }

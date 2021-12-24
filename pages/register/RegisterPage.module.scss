@@ -9,6 +9,7 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .paper {
@@ -18,4 +19,10 @@
     position: relative;
     top: 180px;
     text-align: center;
+}
+
+.text{
+    position: relative;
+    top: 200px;
+    font-size: 0.9rem;
 }

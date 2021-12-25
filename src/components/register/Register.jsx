@@ -23,29 +23,22 @@ export default function Register({ onSubmit }) {
     }
 
     async function registerUser() {
-        if (password === retypedpass) {
-            const user = {
-                email: userName,
-                password: password,
-            };
+        const user = {
+            email: userName,
+            password: password,
+        };
 
-            const register = await fetch(
-                "https://hem-api.herokuapp.com/register",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(user),
-                }
-            );
-
-            if (register.status === 200) {
-                alert(`Success ! ${userName} Registered!`);
-            }
-        } else {
-            alert(`Password is not matching!`);
-        }
+        await fetch("https://hem-api.herokuapp.com/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        }).then((response) => {
+            response.status === 200
+                ? alert(`Success! User ${userName} Registered`)
+                : alert("Failed, try again!");
+        });
     }
 
     return (
@@ -104,9 +97,10 @@ export default function Register({ onSubmit }) {
                     value={retypedpass}
                     onChange={handleRetypedPassChange}
                 />
-                <Button variant="contained"
-                onClick={registerUser}
-                onSubmit={onSubmit}>
+                <Button
+                    variant="contained"
+                    onClick={registerUser}
+                    onSubmit={onSubmit}>
                     Register
                 </Button>
             </Paper>

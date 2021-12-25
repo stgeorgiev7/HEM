@@ -7,11 +7,10 @@ import devicesData from "../data/devices.json";
 import AddRoom from "../src/components/rooms/AddRoom";
 import ChangeRoom from "../src/components/rooms/ChangeRoom";
 import AddDevice from "../src/components/devices/AddDevice";
-import Register from "../src/components/register/Register"
 
 export default function Index() {
     return (
-        <Register />
+        <AddDevice />
         // <EditScene
         //   rooms={roomsData?.rooms}
         //   devices={devicesData?.devices}

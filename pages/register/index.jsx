@@ -12,17 +12,19 @@ export default function RegisterPage() {
 
     async function registerUser() {
 
-        await fetch("https://hem-api.herokuapp.com/register/request", {
+        await fetch("https://hem-api.herokuapp.com/register", {
             method: "POST",
             headers: {
-                "Content-Type" : "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                "email":  userName,
-                "password": password,
+                'email': `${userName}`,
+                'password': `${password}`,
             }),
-        }).then((response) => {
-            if (response.status === 200) {
+        })
+        .then((response) => {
+            console.log(response);
+            if (response.ok) {
                 alert(`Success ! ${userName} Registered!`);
             }
         });

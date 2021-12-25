@@ -1,14 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Register.module.scss";
 import classNames from "classnames";
 import { Button, InputAdornment, Paper, TextField } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
 
-export default function Register({ onSubmit }) {
-    const [userName, setUser] = useState();
-    const [password, setPassword] = useState();
-    const [retypedpass, setRetype] = useState();
+export default function Register({ onSubmit, setUser, setPassword, setRetype }) {
 
     function handleUserChange(event) {
         setUser(event.target.value);
@@ -21,26 +18,7 @@ export default function Register({ onSubmit }) {
     function handleRetypedPassChange(event) {
         setRetype(event.target.value);
     }
-
-    async function registerUser() {
-        const user = {
-            email: userName,
-            password: password,
-        };
-
-        await fetch("https://hem-api.herokuapp.com/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-        }).then((response) => {
-            response.status === 200
-                ? alert(`Success! User ${userName} Registered`)
-                : alert("Failed, try again!");
-        });
-    }
-
+    
     return (
         <div className={classNames(styles["register-form"])}>
             <Paper className={classNames(styles.paper)}>
@@ -58,7 +36,6 @@ export default function Register({ onSubmit }) {
                     type="email"
                     placeholder="Email"
                     variant="outlined"
-                    value={userName}
                     onChange={handleUserChange}
                 />
 
@@ -76,7 +53,6 @@ export default function Register({ onSubmit }) {
                     type="password"
                     placeholder="Password"
                     variant="outlined"
-                    value={password}
                     onChange={handlePasswordChange}
                 />
 
@@ -94,12 +70,10 @@ export default function Register({ onSubmit }) {
                     type="password"
                     placeholder="Retype Password"
                     variant="outlined"
-                    value={retypedpass}
                     onChange={handleRetypedPassChange}
                 />
                 <Button
                     variant="contained"
-                    onClick={registerUser}
                     onSubmit={onSubmit}>
                     Register
                 </Button>

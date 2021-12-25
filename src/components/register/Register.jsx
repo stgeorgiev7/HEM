@@ -5,8 +5,12 @@ import { Button, InputAdornment, Paper, TextField } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
 
-export default function Register({ onSubmit, setUser, setPassword, setRetype }) {
-
+export default function Register({
+    onSubmit,
+    setUser,
+    setPassword,
+    setRetype,
+}) {
     function handleUserChange(event) {
         setUser(event.target.value);
     }
@@ -18,7 +22,7 @@ export default function Register({ onSubmit, setUser, setPassword, setRetype }) 
     function handleRetypedPassChange(event) {
         setRetype(event.target.value);
     }
-    
+
     return (
         <div className={classNames(styles["register-form"])}>
             <Paper className={classNames(styles.paper)}>
@@ -72,9 +76,7 @@ export default function Register({ onSubmit, setUser, setPassword, setRetype }) 
                     variant="outlined"
                     onChange={handleRetypedPassChange}
                 />
-                <Button
-                    variant="contained"
-                    onSubmit={onSubmit}>
+                <Button variant="contained" onClick={onSubmit}>
                     Register
                 </Button>
             </Paper>

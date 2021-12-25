@@ -11,11 +11,15 @@ export default function RegisterPage() {
     const [retypedpass, setRetype] = useState("");
 
     async function registerUser() {
-        await fetch("https://hem-api.herokuapp.com/request", {
+
+        await fetch("https://hem-api.herokuapp.com/register/request", {
             method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
             body: JSON.stringify({
-                "email": `${userName}`,
-                "password": `${password}`,
+                "email":  userName,
+                "password": password,
             }),
         }).then((response) => {
             if (response.status === 200) {

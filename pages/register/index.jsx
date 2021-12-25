@@ -11,23 +11,28 @@ export default function RegisterPage() {
     const [retypedpass, setRetype] = useState("");
 
     async function registerUser() {
+        if (password === retypedpass) {
+            await fetch("https://hem-api.herokuapp.com/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    'email': `${userName}`,
+                    'password': `${password}`,
+                }),
+            })
+            .then((response) => {
+                console.log(response);
+                if (response.ok) {
+                    alert(`Success ! ${userName} Registered!`);
+                }
+            });
+        } else {
+            alert("Password doesn`t match!")
+        }
 
-        await fetch("https://hem-api.herokuapp.com/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                'email': `${userName}`,
-                'password': `${password}`,
-            }),
-        })
-        .then((response) => {
-            console.log(response);
-            if (response.ok) {
-                alert(`Success ! ${userName} Registered!`);
-            }
-        });
+        
     }
 
     return (

@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react";
 import styles from "./RegisterPage.module.scss";
 import classNames from "classnames";
 import { Paper, Container, Typography } from "@mui/material";
@@ -6,28 +6,23 @@ import Register from "../../src/components/register/Register";
 import Link from "../../src/components/link/Link";
 
 export default function RegisterPage() {
-    const [userName, setUser] = useState();
-    const [password, setPassword] = useState();
-    const [retypedpass, setRetype] = useState();
+    const [userName, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const [retypedpass, setRetype] = useState("");
 
     async function registerUser() {
-        console.log("kur");
-        if (password === retypedpass) {
-            await fetch("https://hem-api.herokuapp.com/register", {
-                method: "POST",
-                body: JSON.stringify({
-                    email: `${userName}`,
-                    password: `${password}`,
-                }),
-            }).then((response) => {
-                if (response.status === 200) {
-                    alert(`Success ! ${userName} Registered!`);
-                }
-            });
-        } else {
-            alert(`Password is not matching!`);
-        }
-    };
+        await fetch("https://hem-api.herokuapp.com/register", {
+            method: "POST",
+            body: JSON.stringify({
+                "email": `${userName}`,
+                "password": `${password}`,
+            }),
+        }).then((response) => {
+            if (response.status === 200) {
+                alert(`Success ! ${userName} Registered!`);
+            }
+        });
+    }
 
     return (
         <div className={classNames(styles["wrapper"])}>

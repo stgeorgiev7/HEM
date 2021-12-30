@@ -4,11 +4,19 @@ import { Button, InputAdornment, Paper, TextField } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
 
-export default function Login() {
+export default function Login({ onSubmit, setEmail, setPassword }) {
+    const handleEmail = (event) => {
+        setEmail(event.target.value);
+    };
+
+    const handlePassword = (event) => {
+        setPassword(event.target.value);
+    };
     return (
         <div className={classNames(styles["login-form"])}>
             <Paper className={classNames(styles.paper)}>
                 <TextField
+                    onChange={handleEmail}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -24,6 +32,7 @@ export default function Login() {
                 />
 
                 <TextField
+                    onChange={handlePassword}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -37,7 +46,10 @@ export default function Login() {
                     placeholder="Password"
                     variant="outlined"
                 />
-                <Button variant="contained"> Login</Button>
+                <Button onClick={onSubmit} variant="contained">
+                    {" "}
+                    Login
+                </Button>
             </Paper>
         </div>
     );

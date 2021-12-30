@@ -3,10 +3,12 @@ import classNames from "classnames";
 import { Paper, Container } from "@mui/material";
 import Login from "../../src/components/login/Login";
 import { useState } from "react";
+import { useRouter } from "next/dist/client/router";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter();
 
     async function loginUser() {
         const res = await fetch("https://hem-api.herokuapp.com/login", {
@@ -23,6 +25,7 @@ export default function LoginPage() {
         if (res.ok) {
             const data = await res.json();
             localStorage.setItem("accessToken", data["accessToken"]);
+            router.push("/");
         }
     }
 

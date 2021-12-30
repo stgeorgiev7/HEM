@@ -27,6 +27,7 @@ export default function Login({ onSubmit, setEmail, setPassword }) {
                         ),
                     }}
                     required
+                    type="email"
                     placeholder="Email"
                     variant="outlined"
                 />
@@ -43,6 +44,7 @@ export default function Login({ onSubmit, setEmail, setPassword }) {
                         ),
                     }}
                     required
+                    type="password"
                     placeholder="Password"
                     variant="outlined"
                 />

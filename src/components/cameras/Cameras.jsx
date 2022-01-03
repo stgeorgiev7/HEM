@@ -1,33 +1,27 @@
 import styles from "./Cameras.module.scss";
 import classNames from "classnames";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import Card from "../card/Card";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Cameras({ cameras, hasButton }) {
-    const [videoUrl, setVideoUrl] = useState("videos/bathroom.mp4"); // default state should be the first video from cameras arr ???
-    const [selectedElement, setSelectedElement] = useState();
-    const element = useRef();
-
-    const changeVideo = (event) => {
-        getVideoUrl(event);
-        selectVideo(event);
-    };
-
-    const getVideoUrl = (event) => {
-        const src = event.target.getAttribute("src");
-        setVideoUrl(src);
-    };
+    const selectedElement = useRef(null);
+    const videoElement = useRef(null);
 
     const selectVideo = (event) => {
-        selectedElement.classList.remove(styles["selected"]);
-        event.target.classList.add(classNames(styles["selected"]));
-        setSelectedElement(event.target);
+        const selectedVideoSrc = event.target.getAttribute("src");
+        videoElement.current.setAttribute("src", selectedVideoSrc);
+
+        selectedElement.current.classList.remove(styles["selected"]);
+        selectedElement.current = event.target;
+        selectedElement.current.classList.add(classNames(styles["selected"]));
     };
 
     useEffect(() => {
-        const selected = document.querySelector("[class*='Cameras_selected']");
-        setSelectedElement(selected);
+        // default state should be the first video from cameras arr ???
+        videoElement.current.setAttribute("src", "videos/bathroom.mp4");
+        //the first selected element should be the first video from cameras arr???
+        selectedElement.current.classList.add(classNames(styles["selected"]));
     }, []);
 
     return (
@@ -35,8 +29,8 @@ export default function Cameras({ cameras, hasButton }) {
             <Grid container className={classNames(styles["cameras-container"])}>
                 <Grid item xs={8}>
                     <video
-                        src={videoUrl}
                         className={classNames(styles["video-player"])}
+                        ref={videoElement}
                         autoPlay
                         muted></video>
                 </Grid>
@@ -50,17 +44,8 @@ export default function Cameras({ cameras, hasButton }) {
                     )}>
                     <Grid item xs={5}>
                         <video
-                            ref={element}
-                            onClick={changeVideo}
-                            src={"videos/front-door.mp4"}
-                            className={classNames(
-                                styles["video-item"],
-                                styles["selected"]
-                            )}></video>
-                    </Grid>
-                    <Grid item xs={5}>
-                        <video
-                            onClick={changeVideo}
+                            ref={selectedElement}
+                            onClick={selectVideo}
                             src={"videos/front-door.mp4"}
                             className={classNames(
                                 styles["video-item"]
@@ -68,7 +53,7 @@ export default function Cameras({ cameras, hasButton }) {
                     </Grid>
                     <Grid item xs={5}>
                         <video
-                            onClick={changeVideo}
+                            onClick={selectVideo}
                             src={"videos/front-door.mp4"}
                             className={classNames(
                                 styles["video-item"]
@@ -76,7 +61,15 @@ export default function Cameras({ cameras, hasButton }) {
                     </Grid>
                     <Grid item xs={5}>
                         <video
-                            onClick={changeVideo}
+                            onClick={selectVideo}
+                            src={"videos/front-door.mp4"}
+                            className={classNames(
+                                styles["video-item"]
+                            )}></video>
+                    </Grid>
+                    <Grid item xs={5}>
+                        <video
+                            onClick={selectVideo}
                             src={"videos/garden.mp4"}
                             className={classNames(
                                 styles["video-item"]
@@ -84,7 +77,7 @@ export default function Cameras({ cameras, hasButton }) {
                     </Grid>
                     <Grid item xs={5}>
                         <video
-                            onClick={changeVideo}
+                            onClick={selectVideo}
                             src={"videos/kitchen.mp4"}
                             className={classNames(
                                 styles["video-item"]
@@ -92,7 +85,7 @@ export default function Cameras({ cameras, hasButton }) {
                     </Grid>
                     <Grid item xs={5}>
                         <video
-                            onClick={changeVideo}
+                            onClick={selectVideo}
                             src={"videos/balcony.mp4"}
                             className={classNames(
                                 styles["video-item"]
